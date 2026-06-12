@@ -1,0 +1,162 @@
+block vars
+  - var classPage = ''
+  - var metaTitle = ''
+  - var path = ''
+  - var page = ''
+
+mixin tabCommonNews(data)
+  ul.c-tab-news&attributes(attributes)
+    li.c-tab-news__entry
+      span.c-tab-news__entry-wrapper.is-tab-active.js-tab__toggle(data-tab-id="tab-news tab-news-event") 
+        span.c-tab-news__entry-label Sự kiện
+    li.c-tab-news__entry
+      span.c-tab-news__entry-wrapper.js-tab__toggle(data-tab-id="tab-news tab-news-activity") 
+        span.c-tab-news__entry-label Hoạt động
+    li.c-tab-news__entry
+      span.c-tab-news__entry-wrapper.js-tab__toggle(data-tab-id="tab-news tab-news-tutorial") 
+        span.c-tab-news__entry-label Hướng dẫn
+
+mixin cardCommonCharacter(data)
+  .c-card-character.js-border-polygon&attributes(attributes)
+    ul.c-card-character__viewport
+      each item in data
+        li.c-card-character__wrapper.js-border-polygon&attributes(item.attributes)
+          .c-card-character__inner
+            span.c-card-character__label!=item.label
+            .c-card-character__content
+              .c-card-character__content-detail
+                p!=item.detail
+
+mixin slideCommonCharacter(data)
+  .c-slide-character.swiper-slide&attributes(attributes)
+    .c-slide-character__viewport
+      .c-slide-character__toggle.u-effect-hover.u-display-sp.js-tab__toggle(data-tab-id="slide-character slide-character-"+data.id)
+        span.c-icon-helper
+          span.c-icon-helper__wrapper ?
+        span.c-slide-character__toggle-wrapper Chi tiết
+      .c-frame-tabbing.js-tab__target(data-tab-id="slide-character slide-character-"+data.id)
+        .c-frame-tabbing__wrapper
+          +cardCommonCharacter(data.cardCharacter)
+      .c-card-character.is-standalone.js-border-polygon
+        ul.c-card-character__viewport
+          li.c-card-character__wrapper.is-skills.js-border-polygon
+            .c-card-character__inner
+              span.c-card-character__label Skills
+              .c-card-character__content
+                .c-slider-skills.js-slider-numbered
+                  .c-slider-skills__viewport.swiper
+                    .c-slider-skills__wrapper.swiper-wrapper
+                      each slide in data.sliderSkills
+                        .c-slider-skills__slide.swiper-slide
+                          +listCommonSkills(slide)
+                    .c-slider-skills__pagination.swiper-pagination.js-slider-numbered__pagination
+      .c-slide-character__wrapper
+        .c-slide-character__thumbnail
+          figure.c-slide-character__thumbnail-wrapper
+            img.u-object(src=data.thumbnail.src alt=data.thumbnail.alt)
+    span.c-slide-character__title!=data.title
+
+mixin filtersCommonNews(data)
+  .c-filters-news&attributes(attributes)
+    ul.c-filters-news__wrapper
+      li.c-filters-news__entry
+        span.c-filters-news__entry-wrapper.is-tab-active.js-tab__toggle(data-tab-id="filters-news-"+data.id) Tất cả
+      li.c-filters-news__entry
+        span.c-filters-news__entry-wrapper.js-tab__toggle(data-tab-id="filters-news-"+data.id+" filters-news-"+data.id+"-newest") Mới nhất
+      li.c-filters-news__entry
+        span.c-filters-news__entry-wrapper.js-tab__toggle(data-tab-id="filters-news-"+data.id+" filters-news-"+data.id+"-oldest") Cũ nhất
+    .c-filters-news__extra
+      .c-input-search
+        input(type="text" placeholder="Tìm kiếm")
+        button.u-effect-hover(type="submit")
+
+mixin listCommonNews(data)
+  ul.c-list-news&attributes(attributes)
+    each item in data
+      li.c-list-news__item
+        a.c-list-news__item-wrapper.u-effect-hover(href=item.url)
+          .c-list-news__item-thumbnail
+            figure.thumbnail-wrapper
+              img.u-object(src=item.thumbnail.src alt=item.thumbnail.alt)
+          .c-list-news__item-information
+            #{item.title.tag}.c-list-news__information-title!=item.title.content
+            .c-list-news__information-detail
+              p!=item.description
+            .c-properties-information
+              time.c-properties-information__date(datetime=item.date.format)
+                span.c-properties-information__date-wrapper!=item.date.value
+              .c-icon-views
+                span.c-icon-views__wrapper!=item.views
+
+mixin listCommonSkills(data)
+  ul.c-list-skills&attributes(attributes)
+    each item in data
+      li.c-list-skills__item
+        .c-list-skills__item-icon
+          figure.c-list-skills__icon-wrapper
+            img.u-object(src=item.icon.src alt=item.icon.alt)
+          .c-list-skills__icon-caption
+            span.c-list-skills__caption-wrapper!=alt=item.icon.caption
+        .c-list-skills__item-wrapper
+          #{item.title.tag}.c-list-skills__item-title!=item.title.content
+          .c-list-skills__item-description
+            p!=item.description
+
+mixin breadcrumbCommon(data)
+  nav.c-breadcrumb&attributes(attributes)
+    .u-wrapper
+      ul.c-breadcrumb__wrapper
+        li.c-breadcrumb__entry
+          a.c-breadcrumb__entry-wrapper(href=path+"/") Trang chủ
+        each entry in data
+          li.c-breadcrumb__entry
+            if(entry.url===null)
+              span.c-breadcrumb__entry-wrapper!=entry.title
+            else
+              a.c-breadcrumb__entry-wrapper(href=entry.url)!=entry.title
+
+mixin paginationCommon()
+  .c-pagination&attributes(attributes)
+    .c-pagination__arrow
+      a.c-pagination__arrow-wrapper.is-first(href="#")
+    .c-pagination__arrow
+      a.c-pagination__arrow-wrapper.is-previous(href="#")
+    ol.c-pagination__wrapper
+      li.c-pagination__entry
+        a.c-pagination__entry-wrapper(href="#") 1
+      li.c-pagination__entry
+        a.c-pagination__entry-wrapper(href="#") 2
+      li.c-pagination__entry
+        a.c-pagination__entry-wrapper(href="#") 3
+      li.c-pagination__dots
+        span.c-pagination__dots-wrapper . . .
+      li.c-pagination__entry
+        span.c-pagination__entry-wrapper.is-current 99
+    .c-pagination__arrow
+      span.c-pagination__arrow-wrapper.is-next.is-disabled
+    .c-pagination__arrow
+      span.c-pagination__arrow-wrapper.is-last.is-disabled
+
+doctype html
+html(lang="en" class="is-page-"+page)
+  head
+    meta(charset="UTF-8")
+    meta(http-equiv='X-UA-Compatible' content='IE=edge')
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    title #{metaTitle}
+    link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.css")
+    link(rel="stylesheet" href=path+"/css/common.css")
+    link(rel="stylesheet" href=`${path}/css/${page.replace(/-/gi,'_')}.css`)
+  body
+    include ../_parts/_header.pug
+    block content
+    include ../_parts/_footer.pug
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js")
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.js")
+    script(src="https://unpkg.com/lenis@1.3.17/dist/lenis.min.js")
+    script(src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js")
+    script(src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/Observer.min.js")
+    script(src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js")
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js" defer)
+    script(src=path+"/js/scripts.js")
+

@@ -1,0 +1,129 @@
+@charset "utf-8";
+@use "variables"as *;
+
+@mixin desktop-md {
+
+  @media print,
+  (min-width: 1101px) {
+    @content;
+  }
+}
+
+@mixin desktop {
+
+  @media print,
+  (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin laptop {
+  @media (min-width: 1025px) and (max-width: 1439.98px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: 768px) and (max-width: 1024.98px) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media only screen and (max-width: 767.98px) {
+    @content;
+  }
+}
+
+@mixin height {
+  @media (min-width: 768px) and (max-height: 599.98px) {
+    @content; 
+  }
+}
+
+@mixin height-zoom {
+  @media (min-width: 768px) and (max-height: 719.98px) {
+    @content; 
+  }
+}
+
+@mixin print {
+  @media print {
+    @content;
+  }
+}
+
+@mixin text-wrap {
+  word-break: break-word;
+}
+
+@mixin text-ellipse($line) {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-line-clamp: $line;
+  -webkit-box-orient: vertical;
+}
+
+@mixin scroll-hidden {
+  &::-webkit-scrollbar {
+    width: 0;
+    opacity: 0;
+  }
+}
+
+@mixin scroll-auto-x {
+  overflow: auto hidden;
+}
+
+@mixin scroll-auto-y {
+  overflow: hidden auto;
+}
+
+@mixin placeholder {
+  &::-webkit-input-placeholder {
+    @content;
+  }
+
+  &::-ms-input-placeholder {
+    @content;
+  }
+
+  &:-ms-input-placeholder {
+    @content;
+  }
+
+  &::-moz-placeholder {
+    @content;
+  }
+
+  &:-moz-placeholder {
+    @content;
+  }
+
+  &::placeholder {
+    @content;
+  }
+}
+
+@mixin reset-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+@mixin reset-text {
+  font-weight: $fontweight-semibold;
+
+  html.is-android & {
+    font-weight: $fontweight-bold;
+  }
+}
+
+@function path-highlight($borderCut) {
+  @return polygon(#{$borderCut} 0,
+    100% 0,
+    100% calc(100% - #{$borderCut}),
+    calc(100% - #{$borderCut}) 100%,
+    0 100%,
+    0 #{$borderCut});
+}

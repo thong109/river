@@ -1,0 +1,147 @@
+@charset "utf-8";
+@use "variables"as *;
+@use "mixins"as *;
+
+@font-face {
+  font-family: ftv;
+  font-style: normal;
+  font-weight: 400;
+  src: url("./../resources/fonts/1FTV-VIP-British-Green.ttf") format("truetype");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: ftv;
+  font-style: italic;
+  font-weight: 400;
+  src: url("./../resources/fonts/1FTVVIPBritishGreen-Italic.ttf") format("truetype");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: SVNGotham;
+  font-style: normal;
+  font-weight: 400;
+  src: url("./../resources/fonts/SVN-Gotham-Book.otf") format("opentype");
+  font-display: swap;
+}
+
+html {
+  line-height: 1;
+  @include scroll-hidden;
+  background: $color-default;
+
+  @include desktop {
+    overflow: auto scroll;
+    font-size: calc(100vw / 19.2);
+  }
+
+  @include tablet {
+    font-size: calc(100vw / 10.24);
+  }
+
+  @include mobile {
+    @include scroll-hidden;
+
+    min-height: 100vh;
+    font-size: calc(100dvw / 4.4);
+  }
+}
+
+body {
+  background: $color-default;
+  color: $color-default;
+  font-family: $font-default;
+  font-size: $fontsize-default;
+  font-weight: $fontweight-default;
+  line-height: $lineheight-default;
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+
+  html.is-frozen-windows & {
+    position: fixed;
+    width: 100%;
+  }
+}
+
+a:not([class]),
+.u-effect-underline {
+  transition: text-decoration 0.5s ease;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.03em;
+
+  &:hover {
+    text-decoration-color: transparent;
+  }
+
+  html.is-touchable & {
+    &:hover {
+      text-decoration-color: inherit;
+    }
+  }
+}
+
+img,
+svg {
+  image-rendering: smooth;
+  shape-rendering: geometricprecision;
+}
+
+.trans {
+  transition: opacity 0.5s ease;
+  opacity: 1;
+  text-decoration: none;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  html.is-touchable & {
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
+
+.image-common {
+  display: block;
+  width: 100%;
+}
+
+.object-common {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.wrapper {
+  margin-right: auto;
+  margin-left: auto;
+
+  @include desktop {
+    width: calc(100% - 0.4rem);
+    max-width: $wrapper-width;
+  }
+
+  @include mobile {
+    width: calc(100% - 0.4rem);
+  }
+}
+
+.sm {
+  @include desktop {
+    display: none !important;
+  }
+}
+
+.md {
+  @include mobile {
+    display: none !important;
+  }
+}
+
+.hidden {
+  display: none !important;
+}

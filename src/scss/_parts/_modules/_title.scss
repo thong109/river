@@ -1,0 +1,45 @@
+@charset "utf-8";
+@use "../../_base/base"as *;
+
+.title-common-primary {
+  font-family: $font-ftv;
+  text-transform: uppercase;
+  color: $color-light;
+  font-weight: 400;
+
+  span {
+    display: block;
+  }
+
+  .title-large {
+    color: #fffefe;
+  }
+
+  &.is-center {
+    text-align: center;
+  }
+
+  @include desktop {
+    margin-bottom: 0.38rem;
+
+    .title-large {
+      margin-top: -0.05rem;
+      font-size: 0.45rem;
+    }
+
+    .title-small {
+      font-size: 0.35rem;
+    }
+  }
+}
+
+.title-common-secondary {
+  font-weight: 400;
+  text-transform: uppercase;
+
+  @include desktop {
+    margin-bottom: 0.24rem;
+    font-size: 0.25rem;
+    line-height: calc(60 / 25);
+  }
+}

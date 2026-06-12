@@ -1,0 +1,67 @@
+@charset "utf-8";
+@use "../../_base/base"as *;
+
+.button-common-primary {
+  color: $color-light;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: fit-content;
+  position: relative;
+
+  &.is-white {
+    color: #fff;
+  }
+
+  &.is-right {
+    &::after {
+      transform: rotate(-90deg);
+    }
+  }
+
+  &::before {
+    position: absolute;
+    content: "";
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    display: block;
+    background: url(../resources/images/common/decor_icon_01.svg) center center / contain no-repeat;
+  }
+
+  &::after {
+    position: absolute;
+    content: "";
+    right: 0;
+    top: 0;
+    display: block;
+    background: url(../resources/images/common/arrow_icon_01.svg) center center / contain no-repeat;
+    opacity: .5;
+  }
+
+  @include desktop {
+    padding-bottom: 0.18rem;
+    font-size: 0.16rem;
+
+    &::before {
+      width: 0.52rem;
+      height: 0.13rem;
+    }
+
+    &::after {
+      margin: 0.06rem -0.26rem 0 0;
+      width: 0.14rem;
+      height: 0.14rem;
+    }
+  }
+
+  @include mobile {
+    margin-bottom: 0.2rem;
+    padding-bottom: 0.4rem;
+    font-size: 0.17rem;
+
+    &::before {
+      height: calc(100% - 0.23rem);
+    }
+  }
+}

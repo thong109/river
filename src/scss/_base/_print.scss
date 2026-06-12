@@ -1,0 +1,30 @@
+@charset "utf-8";
+
+@media print {
+  html,
+  body {
+    width: 1600px;
+    margin: 0;
+  }
+
+  body {
+    -webkit-print-color-adjust: exact;
+  }
+
+  @page {
+    margin: 0;
+    size: 11in 14.028in;
+  }
+
+  @page :left {
+    margin: 0;
+  }
+
+  @page :right {
+    margin: 0;
+  }
+
+  @page :first {
+    margin-top: 0;
+  }
+}

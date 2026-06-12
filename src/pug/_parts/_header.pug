@@ -1,0 +1,61 @@
+header.header-common
+  .wrapper
+    .header-inner
+      .header-left
+        .header-hamburger.js-click
+          span MENU
+          button.header-menu-btn
+            span
+            span
+            span
+        .header-lang(data-url="#")
+          span VN
+          svg(width="10" height="6" viewBox="0 0 10 6" fill="none")
+            path(d="M0.5 0.5L4.52915 4.66201L8.69116 0.632855" stroke="#C6A45A" stroke-linecap="round" stroke-linejoin="round")
+      a#logo-primary.header-logo(href="#")
+        img.image-common.is-normal(src=imgCommonPC+"header_logo.svg" width="198" height="48" loading="eager" alt="BLUEMARQ DEVELOPMENT")
+      .header-right
+        a.header-phone(href="#")
+          span.header-icon.is-cta
+    .header-common-navigation
+      .navigation-wrapper
+        nav.navigation-menu
+          .menu-heading
+            .heading-logo
+              img.object-common(src=imgCommonPC+"header_logo.svg" width="" height="" loading="eager" alt="BLUEMARQ DEVELOPMENT")
+            button(type="button").button-close.js-button-close.trans
+              span MENU
+              span.button-icon
+                svg(width="17", height="17", viewBox="0 0 17 17", fill="none", xmlns="http://www.w3.org/2000/svg")
+                  path(d="M0.5 0.5L16.299 16.299", stroke="white", stroke-linecap="round")
+                  path(d="M0.5 16.2991L16.299 0.500099", stroke="white", stroke-linecap="round")
+          ul.menu.main-menu.header-menu(id="main-menu header-menu")
+            li.menu-item.menu-link
+              a.link-wrapper.item-link.trans(href="#section-home")
+                span.item-link-text trang chủ
+                span.item-link-text-clone trang chủ
+            li.menu-item.menu-link
+              a.link-wrapper.item-link.trans(href="#section-introduction")
+                span.item-link-text Giới thiệu
+                span.item-link-text-clone Giới thiệu
+            li.menu-item.menu-link
+              a.link-wrapper.item-link.trans(href="#section-projects")
+                span.item-link-text Dự án
+                span.item-link-text-clone Dự án
+            li.menu-item.menu-link
+              a.link-wrapper.item-link.trans(href="#section-gallery")
+                span.item-link-text Thư viện
+                span.item-link-text-clone Thư viện
+            li.menu-item.menu-link
+              a.link-wrapper.item-link.trans(href="#section-recruitment")
+                span.item-link-text Tuyển dụng
+                span.item-link-text-clone Tuyển dụng
+            li.menu-item.menu-link
+              a.link-wrapper.item-link.trans(href="#section-news")
+                span.item-link-text Tin tức
+                span.item-link-text-clone Tin tức
+            li.menu-item.menu-link
+              a.link-wrapper.item-link.trans(href="#section-contact")
+                span.item-link-text Liên hệ
+                span.item-link-text-clone Liên hệ
+      .overlay-menu

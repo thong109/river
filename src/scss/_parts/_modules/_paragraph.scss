@@ -1,0 +1,22 @@
+@charset "utf-8";
+@use "../../_base/base" as *;
+
+.paragraph-common {
+  color: $color-white;
+
+  p {
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  @include desktop {
+    font-size: 0.18rem;
+    line-height: calc(29 / 18);
+  }
+
+  @include mobile {
+    font-size: 0.16rem;
+    line-height: calc(24 / 16);
+  }
+}
