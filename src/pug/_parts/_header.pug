@@ -3,26 +3,28 @@ header.header-common
     .header-inner
       .header-left
         .header-hamburger.js-click
+          .menu-icon
+            img.image-common(src=imgCommonPC+"header_logo_02.svg" width="45" height="16" loading="eager" alt="")
           span MENU
-          button.header-menu-btn
-            span
-            span
-            span
         .header-lang(data-url="#")
           span VN
-          svg(width="10" height="6" viewBox="0 0 10 6" fill="none")
-            path(d="M0.5 0.5L4.52915 4.66201L8.69116 0.632855" stroke="#C6A45A" stroke-linecap="round" stroke-linejoin="round")
+          svg(width="14", height="8", viewBox="0 0 14 8", fill="none", xmlns="http://www.w3.org/2000/svg")
+            path(fill="#fff" fill-rule="evenodd", d="m13.9 1.2l-6.7 6.7c-0.1 0.1-0.3 0.1-0.3 0l-6.8-6.7q-0.1-0.2 0-0.3l0.8-0.9 6 5.9c0 0.1 0.2 0.1 0.3 0l5.8-5.9 0.9 0.9q0.1 0.1 0 0.3z")
       a#logo-primary.header-logo(href="#")
-        img.image-common.is-normal(src=imgCommonPC+"header_logo.svg" width="198" height="48" loading="eager" alt="BLUEMARQ DEVELOPMENT")
+        img.image-common.is-normal(src=imgCommonPC+"header_logo.svg" width="153" height="90" loading="eager" alt="THE EMERALD RIVER PARK")
       .header-right
         a.header-phone(href="#")
+          span.header-icon.is-phone
+          span 19002663
+        a.header-cta(href="#")
           span.header-icon.is-cta
+          span tư vấn
     .header-common-navigation
       .navigation-wrapper
         nav.navigation-menu
           .menu-heading
             .heading-logo
-              img.object-common(src=imgCommonPC+"header_logo.svg" width="" height="" loading="eager" alt="BLUEMARQ DEVELOPMENT")
+              img.object-common(src=imgCommonPC+"header_logo.svg" width="" height="" loading="eager" alt="THE EMERALD RIVER PARK")
             button(type="button").button-close.js-button-close.trans
               span MENU
               span.button-icon

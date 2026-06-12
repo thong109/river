@@ -402,13 +402,13 @@ html.is-touchable .trans:hover {
 .header-common .header-lang {
   display: flex;
   align-items: center;
-  color: #C6A45A;
+  color: rgba(255, 255, 255, 0.8);
   cursor: pointer;
-  font-weight: 300;
 }
-.header-common .header-lang span {
+.header-common .header-lang svg {
   position: relative;
-  top: 0.02rem;
+  top: 0.01rem;
+  opacity: 0.8;
 }
 .header-common .header-logo {
   display: block;
@@ -416,6 +416,7 @@ html.is-touchable .trans:hover {
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.3s ease, visibility 0.3s ease;
+  position: relative;
 }
 .header-common .header-logo img {
   transition: opacity 0.3s ease;
@@ -438,18 +439,28 @@ html.is-touchable .trans:hover {
   color: #ffffff;
   font-weight: 700;
   text-transform: uppercase;
+  transition: color 0.35s ease;
 }
 .header-common .header-cta {
   display: flex;
   align-items: center;
   border: none;
   color: #ffffff;
-  font-weight: 800;
+  font-weight: 700;
   text-transform: uppercase;
+  transition: color 0.35s ease;
 }
 .header-common .header-phone,
 .header-common .header-cta {
   cursor: pointer;
+}
+.header-common .header-phone:hover,
+.header-common .header-cta:hover {
+  color: #006a51;
+}
+.header-common .header-phone:hover .header-icon,
+.header-common .header-cta:hover .header-icon {
+  border-color: #006a51;
 }
 .header-common .header-phone:hover .header-icon::after,
 .header-common .header-cta:hover .header-icon::after {
@@ -465,7 +476,10 @@ html.is-touchable .trans:hover {
   flex: 0 0 auto;
   position: relative;
   overflow: hidden;
-  transition: border-color 0.3s ease;
+  transition: border-color 0.35s ease;
+  transition: border-color 0.35s ease;
+  border-radius: 50%;
+  border: 1px solid #fff;
 }
 .header-common .header-icon::after, .header-common .header-icon::before {
   position: absolute;
@@ -499,38 +513,42 @@ html.is-touchable .trans:hover {
 }
 @media print, (min-width: 768px) {
   .header-common {
-    padding: 0.16rem 0;
+    padding: 0.22rem 0;
   }
   .header-common .wrapper {
-    max-width: 16.8rem;
+    max-width: 18.6rem;
   }
   .header-common .header-icon {
-    width: 0.22rem;
-    height: 0.22rem;
+    width: 0.56rem;
+    height: 0.56rem;
   }
   .header-common .header-phone {
     gap: 0.15rem;
-    font-size: 0.24rem;
+    font-size: 0.2rem;
     line-height: 1.2;
   }
   .header-common .header-cta {
-    gap: 0.1rem;
+    gap: 0.12rem;
     font-size: 0.18rem;
     line-height: 1.2;
   }
   .header-common .header-right {
-    width: 2.2rem;
+    gap: 0.4rem;
+    margin-top: -0.2rem;
+    padding-right: 0.07rem;
   }
   .header-common .header-left {
-    gap: 0.68rem;
+    gap: 0.32rem;
+    width: 3.56rem;
   }
   .header-common .header-lang {
-    font-size: 0.18rem;
-    line-height: 1.3888888889;
+    font-size: 0.16rem;
+    line-height: 1.5;
     gap: 0.08rem;
   }
   .header-common .header-logo {
-    width: 1.98rem;
+    width: 1.53rem;
+    top: 0.17rem;
   }
 }
 @media only screen and (max-width: 767.98px) {
@@ -546,11 +564,11 @@ html.is-touchable .trans:hover {
   }
   .header-common .header-phone {
     gap: 0.15rem;
-    font-size: 0.24rem;
+    font-size: 0.2rem;
     line-height: 1.2;
   }
   .header-common .header-cta {
-    gap: 0.1rem;
+    gap: 0.12rem;
     font-size: 0.18rem;
     line-height: 1.2;
   }
@@ -579,55 +597,34 @@ html.is-touchable .trans:hover {
   }
 }
 
-.header-menu-btn {
-  border: none;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: center;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  position: relative;
-}
-.header-menu-btn span {
-  width: 0.29rem;
-  height: 0.01rem;
-  background: #C6A45A;
-  transition: all 0.3s ease;
-}
-.header-menu-btn:hover span:nth-child(2) {
-  width: 0.18rem;
-}
-@media print, (min-width: 768px) {
-  .header-menu-btn {
-    gap: 0.08rem;
-    padding: 0.16rem;
-  }
-}
-@media only screen and (max-width: 767.98px) {
-  .header-menu-btn {
-    width: 0.5rem;
-    height: 0.5rem;
-    margin-left: -0.02rem;
-    gap: 0.08rem;
-    padding: 0.11rem;
-  }
-}
-
 .header-hamburger {
   display: flex;
   align-items: center;
-  color: #C6A45A;
+  justify-content: center;
+  color: #fff;
   cursor: pointer;
+  border: 1px solid #fff;
+  border-radius: 9999px;
+  font-weight: 500;
 }
 .header-hamburger > span {
   position: relative;
   top: 0.02rem;
 }
+.header-hamburger .menu-icon {
+  display: block;
+}
 @media print, (min-width: 768px) {
   .header-hamburger {
-    font-size: 0.17rem;
-    line-height: 1.4705882353;
+    font-size: 0.18rem;
+    line-height: 1.3;
+    width: 1.7rem;
+    min-height: 0.56rem;
+    gap: 0.1rem;
+  }
+  .header-hamburger .menu-icon {
+    margin-top: 0.08rem;
+    width: 0.45rem;
   }
 }
 @media only screen and (max-width: 767.98px) {
