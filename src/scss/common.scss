@@ -719,3 +719,15 @@ html.wf-active .fade-in-up {
     clip-path: inset(0 0 0 0);
   }
 }
+
+@keyframes ring {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translate(-50%, -50%) scale(1.2);
+    opacity: 0;
+  }
+}

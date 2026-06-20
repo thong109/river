@@ -6,13 +6,13 @@
 
   p {
     &:last-child {
-      margin-bottom: 0;
+      margin-bottom: 0 !important;
     }
   }
 
   @include desktop {
     font-size: 0.18rem;
-    line-height: calc(29 / 18);
+    line-height: calc(26 / 18);
   }
 
   @include mobile {

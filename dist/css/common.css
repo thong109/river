@@ -1630,12 +1630,12 @@ html.is-touchable .trans:hover {
   color: #fff;
 }
 .paragraph-common p:last-child {
-  margin-bottom: 0;
+  margin-bottom: 0 !important;
 }
 @media print, (min-width: 768px) {
   .paragraph-common {
     font-size: 0.18rem;
-    line-height: 1.6111111111;
+    line-height: 1.4444444444;
   }
 }
 @media only screen and (max-width: 767.98px) {
@@ -2280,5 +2280,15 @@ html.wf-active .fade-in-up {
   }
   100% {
     clip-path: inset(0 0 0 0);
+  }
+}
+@keyframes ring {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1.2);
+    opacity: 0;
   }
 }
