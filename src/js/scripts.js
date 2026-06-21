@@ -935,13 +935,12 @@
       }
     };
 
-    const needsPanelActive = () =>
+    const usesPanelState = () =>
       isDesktop() &&
-      window.__APP_STATE__?.sliderState?.active &&
       section.classList.contains("panel");
 
     const checkPanelState = () => {
-      if (needsPanelActive()) {
+      if (usesPanelState()) {
         updateVideoState(section.classList.contains("is-active"));
       }
     };
@@ -949,7 +948,7 @@
     if ("IntersectionObserver" in window) {
       const observer = new IntersectionObserver(
         ([entry]) => {
-          if (needsPanelActive() && !section.classList.contains("is-active")) {
+          if (usesPanelState() && !section.classList.contains("is-active")) {
             resetVideo();
             return;
           }
