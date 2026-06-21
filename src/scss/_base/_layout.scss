@@ -142,6 +142,8 @@ svg {
   }
 }
 
-.hidden {
+.display-none,
+.hidden,
+.hide-it {
   display: none !important;
 }

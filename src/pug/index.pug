@@ -40,17 +40,17 @@ block content
           .inner
             .group-bg
               .keyvisual-wrapper
-                h1.keyvisual-title.hero-title
-                  span.js-title-fade The Mark Of Excellence
+                h1.keyvisual-title.hero-title.js-title.js-title-fade
+                  img.image-common(src=imgPC+"keyvisual_title.svg" width="280" height="271" alt="Sống chất tuyệt đỉnh bên sông" loading="eager")
                 a.button-common-primary.hero-sub(href="#") Khám Phá
       section.panel.section-top-icon
         .group-central
           .inner
             .group-bg
               .wrapper
-                .content-wrapper
+                .icon-wrapper
                   h2.title-common-primary.hero-title.js-title
-                    img.image-common(src=imgPC+"overview_title.svg" width="492" height="239" alt="biển tượng bến du thuyền tại 'vùng xanh' TP.HCM" loading="eager")
+                    img.image-common(src=imgPC+"icon_title.svg" width="492" height="239" alt="biển tượng bến du thuyền tại 'vùng xanh' TP.HCM" loading="eager")
                   .paragraph-common.hero-title.js-title
                     p Lấy cảm hứng từ Marina Lifestyle danh giá, The Emerald River Park kiến tạo đặc quyền sống bên bến du thuyền giữa dòng chảy vượng khí của sông Sài Gòn.
                     p Tại đây, mỗi căn hộ là một điểm chạm của sự tự do, khoáng đạt và nguồn cảm hứng bất tận, mở ra chuẩn sống khác biệt – nơi thiên nhiên xanh mát, tầm nhìn rộng mở và nhịp sống thượng lưu giao hòa, kiến tạo "Chất Sống Tuyệt Đích" dành cho cộng đồng cư dân tinh hoa.
@@ -59,9 +59,102 @@ block content
           .inner
             .group-bg
               .wrapper
-                .content-wrapper
-                  h2.title-common-primary.hero-title.js-title
-                    img.image-common(src=imgPC+"overview_title.svg" width="492" height="239" alt="biển tượng bến du thuyền tại 'vùng xanh' TP.HCM" loading="eager")
+                .overview-wrapper
+                  h2.title-common-primary.is-green.hero-title.js-title
+                    img.image-common(src=imgPC+"overview_title.svg" width="235" height="54" alt="Tổng quan" loading="eager")
+                    span.title-small Dự án
+                  .list-top-overview.hero-title.js-title
+                    ul.list-wrapper
+                      li.list-item
+                        .item-wrapper
+                          .item-content
+                            p.content-title Quy mô
+                            p.content-detail 1.8 <span class="bigger">Ha</span>
+                          .item-content
+                            p.content-title Tổng sản phẩm
+                            p.content-detail 2.460 <span class="small">Căn</span>
+                      li.list-item
+                        .item-wrapper
+                          .item-content
+                            p.content-title Căn hộ
+                            p.content-detail 1.602 <span class="small">Căn</span>
+                          .item-content
+                            p.content-title Condotel
+                            p.content-detail 838 <span class="small">Căn</span>
+                          .item-content
+                            p.content-title Shophouse
+                            p.content-detail 20 <span class="small">Căn</span>
+                      li.list-item
+                        .item-wrapper.is-full
+                          .item-content
+                            p.content-title Số Tháp - Tầng
+                            ul.content-list
+                              li.content-item 5 <span class="small">Tháp</span>
+                              li.content-item 2 <span class="small">tầng hầm</span>
+                              li.content-item 40 <span class="small">tầng cao</span>
+                      li.list-item
+                        .item-wrapper.is-full
+                          .item-content
+                            p.content-title Các loại căn hộ
+                            ul.content-list
+                              li.content-item <span class="large">Studio</span>
+                              li.content-item 1 PN+
+                              li.content-item 2 PN
+                              li.content-item 3 PN
+                      li.list-item
+                        .item-wrapper
+                          .item-content
+                            p.content-title Bàn giao
+                            p.content-detail 2029
+                          .item-content
+                            p.content-title Pháp lý
+                            p.content-detail <span class="large">Sở hữu lâu dài</span>
+      section.panel.section-top-video
+        .group-central
+          .inner
+            .bg-video
+              img.object-common(src=imgPC+"video_thumbnail.jpg" alt="VIDEO" loading="lazy" width="1920" height="980")
+            video(
+              muted
+              loop
+              playsinline
+              preload="auto"
+            )
+              source(src=videoCommon+"keyvisual_video.mp4" type="video/mp4")
+            .controls.hide
+              .left-button
+                .video-time
+                  time.time-elapsed 0:18
+                  span  /
+                  time.duration 3:04
+                button.playback-button
+                  svg.playback-icons(viewBox="0 0 30 30")
+                    g.pause-icon
+                      path(d="M6.1,5h4.7C11.5,5,12,5.5,12,6.1v17.7c0,0.6-0.5,1.1-1.1,1.1H6.1C5.5,25,5,24.5,5,23.9V6.1C5,5.5,5.5,5,6.1,5z  M19.1,5h4.7C24.5,5,25,5.5,25,6.1v17.7c0,0.6-0.5,1.1-1.1,1.1h-4.7c-0.6,0-1.1-0.5-1.1-1.1V6.1C18,5.5,18.5,5,19.1,5z")
+                    g.play-icon.display-none
+                      path(d="M5,6.2v17.6c0,0.6,0.6,0.9,1.1,0.7l17.6-8.8c0.6-0.3,0.6-1.1,0-1.4L6.1,5.5C5.6,5.3,5,5.7,5,6.2z")
+                button.volume-button
+                  svg.volume-icons(viewBox="0 0 30 30")
+                    g.volume-mute
+                      path(d="M2,10.3v9.2h7.4l6.1,6.3V4.1l-6.1,6.3L2,10.3L2,10.3z")
+                    g.volume-high.display-none
+                      path(d="M2,10.3v9.2h7.4l6.1,6.3V4.1l-6.1,6.3L2,10.3L2,10.3z M25.4,4l-1.2,0.9c2.1,2.8,3.3,6.3,3.3,10.1s-1.2,7.3-3.3,10.1l1.2,0.9c2.2-3.1,3.6-6.9,3.6-11 S27.7,7.1,25.4,4z M22,23.3c1.7-2.3,2.7-5.2,2.7-8.3s-1-6-2.7-8.3l-1.2,0.9c1.5,2.1,2.4,4.7,2.4,7.5s-0.9,5.4-2.4,7.5	L22,23.3z M18.5,20.7c1.2-1.6,1.9-3.6,1.9-5.7s-0.7-4.1-1.9-5.7l-1.2,0.9c1,1.4,1.6,3,1.6,4.8s-0.6,3.5-1.6,4.8 L18.5,20.7z")
+              .video-progress
+                progress.progressbar
+                input.seek
+              .right-button
+                button.fullscreen-button
+                  svg.fullscreen-icons(viewBox="0 0 30 30")
+                    g.fullscreen-icon
+                      path(d="M11.5,13 7,8.5 7,11.5 6.4,12.1 5.6,12.1 5,11.5 5,5.6 5.6,5 11.5,5 12.1,5.6 12.1,6.4 11.5,7 8.5,7 13,11.5 13,12.4 12.4,13z M17.6,13 17,12.4 17,11.5 21.5,7 18.5,7 17.9,6.4 17.9,5.6 18.5,5 24.4,5 25,5.6 25,11.5 24.4,12.1 23.6,12.1 23,11.5 23,8.5 18.5,13z M5.6,25 5,24.4 5,18.5 5.6,17.9 6.4,17.9 7,18.5 7,21.5 11.5,17 12.4,17 13,17.6 13,18.5 8.5,23 11.5,23 12.1,23.6 12.1,24.4 11.5,25z M18.5,25 17.9,24.4 17.9,23.6 18.5,23 21.5,23 17,18.5 17,17.6 17.6,17 18.5,17 23,21.5 23,18.5 23.6,17.9 24.4,17.9 25,18.5 25,24.4 24.4,25z")
+                    g.fullscreen-exit-icon.display-none
+                      path(d="M6.5,13.1 5.9,12.5 5.9,11.7 6.5,11 9.6,11 5,6.5 5,5.6 5.6,5 6.5,5 11,9.6 11,6.5 11.7,5.9 12.5,5.9 13.1,6.5 13.1,12.5 12.5,13.1z M17.5,13.1 16.9,12.5 16.9,6.5 17.5,5.9 18.3,5.9 19,6.5 19,9.6 23.5,5 24.4,5 25,5.6 25,6.5 20.4,11 23.5,11 24.1,11.7 24.1,12.5 23.5,13.1z M5,24.4 5,23.5 9.6,19 6.5,19 5.9,18.3 5.9,17.5 6.5,16.9 12.5,16.9 13.1,17.5 13.1,23.5 12.5,24.1 0.7,24.1 11,23.5 11,20.4 6.5,25 5.6,25z M19,20.4 19,23.5 18.3,24.1 17.5,24.1 16.9,23.5 16.9,17.5 17.5,16.9 23.5,16.9 24.1,17.5 24.1,18.3 23.5,19 20.4,19 25,23.5 25,24.4 24.4,25 23.5,25z")
+            .player-vid.hide
+              svg.playback-icons(viewBox="0 0 140 140")
+                g.pause-icon
+                  path(fill="currentColor" d="M56.5,43L56.5,43c2.8,0,5,2.2,5,5v44c0,2.8-2.2,5-5,5l0,0c-2.8,0-5-2.2-5-5V48C51.5,45.2,53.7,43,56.5,43z M83.5,43L83.5,43c2.8,0,5,2.2,5,5v44c0,2.8-2.2,5-5,5l0,0c-2.8,0-5-2.2-5-5V48C78.5,45.2,80.7,43,83.5,43z")
+                g.play-icon.display-none
+                  path(fill="currentColor" d="M56.2,50.5v40.8c0,3.6,4,5.8,7,3.8L95,74.7c2.8-1.9,2.8-5.9,0-7.7L63.2,46.7C60.2,44.8,56.2,46.9,56.2,50.5z")
       section.panel.section-top-utilities
         .group-central
           .inner

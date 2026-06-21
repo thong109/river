@@ -371,7 +371,9 @@ html.is-touchable .trans:hover {
   }
 }
 
-.hidden {
+.display-none,
+.hidden,
+.hide-it {
   display: none !important;
 }
 
@@ -1601,6 +1603,9 @@ html.is-touchable .trans:hover {
 .title-common-primary.is-center {
   text-align: center;
 }
+.title-common-primary.is-green {
+  color: #006a51;
+}
 @media print, (min-width: 768px) {
   .title-common-primary {
     margin-bottom: 0.38rem;
@@ -2250,8 +2255,14 @@ html.wf-active .fade-in-up {
 }
 
 .js-title-fade {
-  display: block;
-  direction: ltr;
+  opacity: 0;
+  transform: translateY(50px);
+}
+
+.js-title-fade.is-show {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.55s, transform 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.55s;
 }
 
 .char {
@@ -2291,4 +2302,86 @@ html.wf-active .fade-in-up {
     transform: translate(-50%, -50%) scale(1.2);
     opacity: 0;
   }
+}
+input[type=range]::-webkit-slider-thumb {
+  width: 20px;
+  height: 20px;
+  margin: -10px 0 0;
+  -webkit-transition: background 0.3s ease-in-out;
+  transition: background 0.3s ease-in-out;
+  border: none;
+  border-radius: 20px;
+  background: var(--color-white);
+  cursor: pointer;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 1px;
+  border-radius: 0;
+  background: 0 0;
+  -webkit-appearance: none;
+}
+
+input[type=range]::-webkit-slider-runnable-track:focus {
+  outline: 0;
+  background: var(--color-white);
+}
+
+input[type=range]::-webkit-slider-thumb:active {
+  background: var(--color-highlight);
+}
+
+progress::-webkit-progress-bar {
+  background: var(--color-white);
+}
+
+progress::-webkit-progress-value {
+  background: var(--color-highlight);
+}
+
+input[type=range]::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  -moz-transition: background 0.3s ease-in-out;
+  transition: background 0.3s ease-in-out;
+  border: none;
+  border-radius: 20px;
+  background: var(--color-white);
+  cursor: pointer;
+  -moz-appearance: none;
+       appearance: none;
+}
+
+input[type=range]::-moz-focusring {
+  outline: 0;
+  background: var(--color-white);
+}
+
+input[type=range]::-moz-range-track {
+  width: 100%;
+  height: 1px;
+  border-radius: 0;
+  background: var(--color-highlight);
+  -moz-appearance: none;
+       appearance: none;
+}
+
+input[type=range]::-moz-range-track:focus {
+  outline: 0;
+  background: var(--color-highlight);
+}
+
+input[type=range]::-moz-range-thumb:active {
+  background: var(--color-highlight);
+}
+
+::-moz-progress-bar {
+  background: var(--color-highlight);
+}
+
+.is-Firefox .progressbar {
+  height: 2px;
 }
