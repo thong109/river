@@ -532,7 +532,6 @@ html.wf-active .fade-in-up {
   inset: 0;
   background-size: cover;
   background-position: center;
-  z-index: -1;
 }
 
 .hero-title,
@@ -684,7 +683,7 @@ html.wf-active .fade-in-up {
 
 .js-title-fade {
   opacity: 0;
-  transform: translateY(50px);
+  transform: translateY(0.5rem);
 }
 
 .js-title-fade.is-show {

@@ -301,11 +301,17 @@
 
         if (headings[i]?.length)
           headings[i].forEach((h) =>
-            gsap.set(h, { autoAlpha: 1, yPercent: 0 }),
+            gsap.set(h, {
+              autoAlpha: 1,
+              yPercent: 0
+            }),
           );
         if (subs[i]?.length)
           subs[i].forEach((sub) =>
-            gsap.set(sub, { autoAlpha: 1, yPercent: 0 }),
+            gsap.set(sub, {
+              autoAlpha: 1,
+              yPercent: 0
+            }),
           );
 
         panels.forEach((p, idx) => p.classList.toggle("is-active", idx === i));
@@ -358,8 +364,7 @@
 
         if (images[s.cur]) {
           tl.to(
-            images[s.cur],
-            {
+            images[s.cur], {
               yPercent: -14 * d,
             },
             0,
@@ -370,12 +375,10 @@
       const curTargets = [outers[i], inners[i]].filter(Boolean);
       if (curTargets.length) {
         tl.fromTo(
-          curTargets,
-          {
+          curTargets, {
             yPercent: (j) => (j ? -100 * d : 100 * d),
             immediateRender: false,
-          },
-          {
+          }, {
             yPercent: 0,
           },
           0,
@@ -384,11 +387,9 @@
 
       if (images[i]) {
         tl.fromTo(
-          images[i],
-          {
+          images[i], {
             yPercent: 14 * d,
-          },
-          {
+          }, {
             yPercent: 0,
           },
           0,
@@ -398,12 +399,10 @@
       if (headings[i]?.length) {
         headings[i].forEach((h, j) => {
           tl.fromTo(
-            h,
-            {
+            h, {
               autoAlpha: 0,
               yPercent: 200 * d,
-            },
-            {
+            }, {
               autoAlpha: 1,
               yPercent: 0,
               duration: 0.9,
@@ -417,12 +416,10 @@
       if (subs[i]?.length) {
         subs[i].forEach((sub, j) => {
           tl.fromTo(
-            sub,
-            {
+            sub, {
               autoAlpha: 0,
               yPercent: 200 * d,
-            },
-            {
+            }, {
               autoAlpha: 1,
               yPercent: 0,
               duration: 0.8,
@@ -772,12 +769,10 @@
 
     targets.forEach((el) => {
       gsap.fromTo(
-        el,
-        {
+        el, {
           autoAlpha: 0,
           y: 100,
-        },
-        {
+        }, {
           autoAlpha: 1,
           y: 0,
           duration: 0.8,
@@ -954,8 +949,7 @@
           }
 
           updateVideoState(entry.isIntersecting);
-        },
-        {
+        }, {
           threshold: 0.35,
         },
       );
@@ -967,8 +961,7 @@
         () => {
           const rect = section.getBoundingClientRect();
           updateVideoState(rect.top < window.innerHeight * 0.65 && rect.bottom > window.innerHeight * 0.35);
-        },
-        {
+        }, {
           passive: true,
         },
       );
@@ -1199,14 +1192,14 @@
 
     const clickElements = document.querySelectorAll('.js-click');
 
-    const buttonClose = document.querySelector('.js-button-close');
+    // const buttonClose = document.querySelector('.js-button-close');
 
     if (
       !header ||
       !overlayMenu ||
       !navigationWrapper ||
-      !clickElements.length ||
-      !buttonClose
+      !clickElements.length
+      // !buttonClose
     ) {
       return;
     }
@@ -1303,7 +1296,7 @@
     overlayMenu.addEventListener('click', closeMenu);
 
     // BUTTON CLOSE
-    buttonClose.addEventListener('click', closeMenu);
+    // buttonClose.addEventListener('click', closeMenu);
   };
 
   const fadeInAnimation = () => {
@@ -1312,12 +1305,10 @@
 
     fadeInElements.forEach((element) => {
       gsap.fromTo(
-        element,
-        {
+        element, {
           opacity: 0,
           y: 50,
-        },
-        {
+        }, {
           opacity: 1,
           y: 0,
           duration: 0.8,
@@ -1350,8 +1341,7 @@
         const hash = href.split("#")[1];
         const linkPath = href.split("#")[0];
 
-        const isSamePage =
-          !linkPath ||
+        const isSamePage = !linkPath ||
           linkPath === window.location.pathname ||
           linkPath === window.location.origin + window.location.pathname ||
           linkPath.endsWith(window.location.pathname);
@@ -1407,9 +1397,9 @@
     const keyframeName = `${prefix}-${Date.now()}-${Math.random().toString(36).slice(2)}`;
     const style = document.createElement("style");
 
-    style.textContent = reverse
-      ? `@keyframes ${keyframeName} { from { transform: translate3d(-${oneSetWidth}px, 0, 0); } to { transform: translate3d(0, 0, 0); } }`
-      : `@keyframes ${keyframeName} { from { transform: translate3d(0, 0, 0); } to { transform: translate3d(-${oneSetWidth}px, 0, 0); } }`;
+    style.textContent = reverse ?
+      `@keyframes ${keyframeName} { from { transform: translate3d(-${oneSetWidth}px, 0, 0); } to { transform: translate3d(0, 0, 0); } }` :
+      `@keyframes ${keyframeName} { from { transform: translate3d(0, 0, 0); } to { transform: translate3d(-${oneSetWidth}px, 0, 0); } }`;
     document.head.appendChild(style);
 
     wrapper.style.width = "max-content";
@@ -1430,7 +1420,10 @@
     document.documentElement.classList.toggle(
       "is-dark-bg",
       bgSections.some((sec) => {
-        const { top, bottom } = sec.getBoundingClientRect();
+        const {
+          top,
+          bottom
+        } = sec.getBoundingClientRect();
         return top < window.innerHeight && bottom > 0;
       }),
     );
@@ -1533,6 +1526,109 @@
     });
   };
 
+  const initMapZoom = () => {
+    const mapWrapper = document.querySelector(".js-map");
+    const zoomInBtn = document.querySelector(".map-controller .button-plus");
+    const zoomOutBtn = document.querySelector(
+      ".map-controller .button-negative",
+    );
+
+    if (!mapWrapper || !zoomInBtn || !zoomOutBtn) return;
+
+    const MIN_ZOOM = 1.2;
+    const MAX_ZOOM = 2;
+
+    let currentZoom = 1.2;
+    let translateX = 0;
+    let translateY = 0;
+
+    let isDragging = false;
+    let startX = 0;
+    let startY = 0;
+
+    let rafId = null;
+
+    const updateUI = () => {
+      if (rafId) return;
+
+      rafId = requestAnimationFrame(() => {
+        if (currentZoom === 1.2) {
+          translateX = 0;
+          translateY = 0;
+        }
+
+        mapWrapper.style.transform = `translate(${translateX}px, ${translateY}px) scale(${currentZoom})`;
+
+        mapWrapper.classList.toggle("is-draggable", currentZoom > 1.2);
+
+        zoomInBtn.classList.toggle("is-disabled", currentZoom >= MAX_ZOOM);
+        zoomOutBtn.classList.toggle("is-disabled", currentZoom <= MIN_ZOOM);
+
+        rafId = null;
+      });
+    };
+
+    zoomInBtn.addEventListener("click", (e) => {
+      e.preventDefault();
+      currentZoom = Math.min(currentZoom + 0.5, MAX_ZOOM);
+      updateUI();
+    });
+
+    zoomOutBtn.addEventListener("click", (e) => {
+      e.preventDefault();
+      currentZoom = Math.max(currentZoom - 0.5, MIN_ZOOM);
+      updateUI();
+    });
+
+    mapWrapper.addEventListener("mousedown", (e) => {
+      if (currentZoom === 1.2) return;
+      isDragging = true;
+      startX = e.clientX / currentZoom - translateX;
+      startY = e.clientY / currentZoom - translateY;
+      mapWrapper.style.cursor = "grabbing";
+    });
+
+    window.addEventListener("mousemove", (e) => {
+      if (!isDragging || currentZoom === 1.2) return;
+      translateX = e.clientX / currentZoom - startX;
+      translateY = e.clientY / currentZoom - startY;
+      updateUI();
+    });
+
+    window.addEventListener("mouseup", () => {
+      isDragging = false;
+      mapWrapper.style.cursor = currentZoom > 1.2 ? "grab" : "default";
+    });
+
+    mapWrapper.addEventListener("touchstart", (e) => {
+      if (currentZoom === 1.2) return;
+      const touch = e.touches[0];
+      isDragging = true;
+      startX = touch.clientX / currentZoom - translateX;
+      startY = touch.clientY / currentZoom - translateY;
+    });
+
+    window.addEventListener(
+      "touchmove",
+      (e) => {
+        if (!isDragging || currentZoom === 1.2) return;
+        e.preventDefault();
+        const touch = e.touches[0];
+        translateX = touch.clientX / currentZoom - startX;
+        translateY = touch.clientY / currentZoom - startY;
+        updateUI();
+      }, {
+        passive: false,
+      },
+    );
+
+    window.addEventListener("touchend", () => {
+      isDragging = false;
+    });
+
+    updateUI();
+  };
+
   window.WebFontConfig = {
     custom: {
       families: [
@@ -1560,9 +1656,12 @@
   scrollPage();
   initMobileNavLinks();
   slideKeyvisual();
-  window.addEventListener("scroll", handleDarkBg, { passive: true });
+  window.addEventListener("scroll", handleDarkBg, {
+    passive: true
+  });
   sliderProjects();
   dragProjectsImage();
   partnersSlider();
   topVideoPlayOnScroll();
+  initMapZoom();
 })();

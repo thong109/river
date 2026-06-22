@@ -61,7 +61,14 @@
     font-size: 0.17rem;
 
     &::before {
-      height: calc(100% - 0.23rem);
+      width: 0.52rem;
+      height: 0.13rem;
+    }
+
+    &::after {
+      margin: 0.06rem -0.26rem 0 0;
+      width: 0.14rem;
+      height: 0.14rem;
     }
   }
 }

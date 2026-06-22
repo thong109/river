@@ -145,8 +145,8 @@
 
 @keyframes DrawStroke {
   0% {
-    -webkit-transform: scale(0.8);
-    transform: scale(0.8);
+    -webkit-transform: scale(1);
+    transform: scale(1);
     stroke-dashoffset: 500;
   }
 

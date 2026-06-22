@@ -3,9 +3,14 @@ header.header-common
     .header-inner
       .header-left
         .header-hamburger.js-click
-          .menu-icon
-            img.image-common(src=imgCommonPC+"header_logo_02.svg" width="45" height="16" loading="eager" alt="")
-          span MENU
+          .hamburger-menu.on
+            .menu-icon
+              img.image-common(src=imgCommonPC+"header_logo_02.svg" width="45" height="16" loading="eager" alt="Open")
+            span MENU
+          .hamburger-menu.off
+            .menu-icon
+              img.image-common(src=imgCommonPC+"header_logo_03.svg" width="40" height="40" loading="eager" alt="Close")
+            span ĐÓNG
         .header-lang(data-url="#")
           span VN
           svg(width="14", height="8", viewBox="0 0 14 8", fill="none", xmlns="http://www.w3.org/2000/svg")
@@ -25,39 +30,41 @@ header.header-common
           .menu-heading
             .heading-logo
               img.object-common(src=imgCommonPC+"header_logo.svg" width="" height="" loading="eager" alt="THE EMERALD RIVER PARK")
-            button(type="button").button-close.js-button-close.trans
-              span MENU
-              span.button-icon
-                svg(width="17", height="17", viewBox="0 0 17 17", fill="none", xmlns="http://www.w3.org/2000/svg")
-                  path(d="M0.5 0.5L16.299 16.299", stroke="white", stroke-linecap="round")
-                  path(d="M0.5 16.2991L16.299 0.500099", stroke="white", stroke-linecap="round")
-          ul.menu.main-menu.header-menu(id="main-menu header-menu")
-            li.menu-item.menu-link
-              a.link-wrapper.item-link.trans(href="#section-home")
-                span.item-link-text trang chủ
-                span.item-link-text-clone trang chủ
-            li.menu-item.menu-link
-              a.link-wrapper.item-link.trans(href="#section-introduction")
-                span.item-link-text Giới thiệu
-                span.item-link-text-clone Giới thiệu
-            li.menu-item.menu-link
-              a.link-wrapper.item-link.trans(href="#section-projects")
-                span.item-link-text Dự án
-                span.item-link-text-clone Dự án
-            li.menu-item.menu-link
-              a.link-wrapper.item-link.trans(href="#section-gallery")
-                span.item-link-text Thư viện
-                span.item-link-text-clone Thư viện
-            li.menu-item.menu-link
-              a.link-wrapper.item-link.trans(href="#section-recruitment")
-                span.item-link-text Tuyển dụng
-                span.item-link-text-clone Tuyển dụng
-            li.menu-item.menu-link
-              a.link-wrapper.item-link.trans(href="#section-news")
-                span.item-link-text Tin tức
-                span.item-link-text-clone Tin tức
-            li.menu-item.menu-link
-              a.link-wrapper.item-link.trans(href="#section-contact")
-                span.item-link-text Liên hệ
-                span.item-link-text-clone Liên hệ
+          .menu-wrapper
+            ul.menu.main-menu.header-menu
+              li.menu-item.menu-link
+                a.link-wrapper.item-link.trans(href="#section-home")
+                  span.item-link-text trang chủ
+              li.menu-item.menu-link
+                a.link-wrapper.item-link.trans(href="#section-introduction")
+                  span.item-link-text Giới thiệu
+              li.menu-item.menu-link
+                a.link-wrapper.item-link.trans(href="#section-location")
+                  span.item-link-text Vị trí
+              li.menu-item.menu-link
+                a.link-wrapper.item-link.trans(href="#section-gallery")
+                  span.item-link-text Mặt bằng
+            ul.menu.main-menu.header-menu
+              li.menu-item.menu-link
+                a.link-wrapper.item-link.trans(href="#section-recruitment")
+                  span.item-link-text Tiện ích
+              li.menu-item.menu-link
+                a.link-wrapper.item-link.trans(href="#section-news")
+                  span.item-link-text Thư viện
+              li.menu-item.menu-link
+                a.link-wrapper.item-link.trans(href="#section-news")
+                  span.item-link-text Tin tức
+              li.menu-item.menu-link
+                a.link-wrapper.item-link.trans(href="#section-contact")
+                  span.item-link-text Liên hệ
+          ul.menu-socials-list
+            li.list-item
+              a.item-wrapper.trans(href="#" target="_blank" rel="noopener")
+                img.object-common(src=imgCommonPC+"social_icon_01.svg" width="67" height="67" loading="lazy" alt="Facebook")
+            li.list-item
+              a.item-wrapper.trans(href="#" target="_blank" rel="noopener")
+                img.object-common(src=imgCommonPC+"social_icon_02.svg" width="67" height="67" loading="lazy" alt="Youtube")
+            li.list-item
+              a.item-wrapper.trans(href="#" target="_blank" rel="noopener")
+                img.object-common(src=imgCommonPC+"social_icon_03.svg" width="67" height="67" loading="lazy" alt="Tiktok")
       .overlay-menu
