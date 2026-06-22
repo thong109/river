@@ -982,3 +982,203 @@
     padding: 0 0.1rem;
   }
 }
+
+.section-top-monopoly .group-bg {
+  background: url(../resources/images/top/monopoly_bg_01.jpg) center center/cover no-repeat;
+}
+.section-top-monopoly .group-bg::before {
+  position: absolute;
+  content: "";
+  top: 0;
+  right: 0;
+  width: 0;
+  height: 100%;
+  background: url(../resources/images/top/monopoly_bg_02.png) no-repeat center/cover;
+  pointer-events: none;
+  transition: width 0.6s cubic-bezier(0.8, 0, 1, 1);
+}
+.section-top-monopoly .monopoly-heading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.section-top-monopoly .monopoly-list .list-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.section-top-monopoly .monopoly-list .item-wrapper {
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  border-radius: 5% 5% 0 0;
+  padding: 0.05rem 0.05rem 0 0.05rem;
+}
+.section-top-monopoly .monopoly-list .item-wrapper::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url(../resources/images/top/monopoly_mask_01.png) center center/cover no-repeat;
+  pointer-events: none;
+  mix-blend-mode: multiply;
+  opacity: 30%;
+  z-index: -1;
+}
+.section-top-monopoly .monopoly-list .item-image {
+  position: relative;
+  overflow: hidden;
+  border-radius: 5% 5% 0 0;
+}
+.section-top-monopoly .monopoly-list .item-image::after {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(1, 69, 55, 0) 55%, rgb(1, 69, 55) 87%);
+}
+.section-top-monopoly .monopoly-list .item-info {
+  color: #fff;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+  z-index: 3;
+  font-size: 0.19rem;
+  text-transform: uppercase;
+  line-height: 1.2;
+  font-weight: 400;
+}
+.section-top-monopoly .monopoly-list .item-info .item-title {
+  margin-bottom: 0.1rem;
+}
+.section-top-monopoly .heading-sub {
+  color: #fff;
+  font-weight: 500;
+  font-family: "Montserrat", sans-serif;
+  line-height: 1;
+}
+.section-top-monopoly .title-common-primary {
+  margin-bottom: 0;
+}
+@media print, (min-width: 768px) {
+  .section-top-monopoly .wrapper {
+    max-width: 18.44rem;
+  }
+  .section-top-monopoly .monopoly-wrapper {
+    max-width: 12.54rem;
+    margin-left: auto;
+  }
+  .section-top-monopoly .heading-sub {
+    font-size: 0.45rem;
+    margin-top: -0.33rem;
+    margin-bottom: 0.37rem;
+  }
+  .section-top-monopoly .monopoly-heading {
+    margin-top: -0.1rem;
+  }
+  .section-top-monopoly .monopoly-wrapper {
+    display: flex;
+    gap: 1.32rem;
+    justify-content: flex-end;
+    position: relative;
+  }
+  .section-top-monopoly .monopoly-wrapper::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 0;
+    left: 1.7rem;
+    height: 1px;
+    border-bottom: 1px solid #fff;
+    opacity: 0.2;
+  }
+  .section-top-monopoly .title-common-primary {
+    width: 1.37rem;
+    height: 2.05rem;
+  }
+  .section-top-monopoly .monopoly-decoration {
+    width: 0.55rem;
+    height: 0.2rem;
+    margin-bottom: 0.42rem;
+  }
+  .section-top-monopoly .monopoly-logo {
+    width: 2.29rem;
+    height: 0.48rem;
+  }
+  .section-top-monopoly .list-wrapper {
+    gap: 0.52rem 0;
+  }
+  .section-top-monopoly .monopoly-list {
+    max-width: 8.37rem;
+  }
+  .section-top-monopoly .monopoly-list .item-image {
+    width: 2.6rem;
+    height: 2.2rem;
+  }
+  .section-top-monopoly .monopoly-list .item-wrapper {
+    max-width: 2.7rem;
+    min-height: 2.2rem;
+  }
+  .section-top-monopoly .monopoly-list .list-item {
+    width: 33.3333333333%;
+  }
+  .section-top-monopoly .list-item.is-revert .item-image {
+    border-radius: 0 0 5% 5%;
+  }
+  .section-top-monopoly .list-item.is-revert .item-wrapper {
+    border-radius: 0 0 5% 5%;
+    padding: 0 0.05rem 0.05rem 0.05rem;
+  }
+  .section-top-monopoly .list-item.is-revert .item-wrapper::after {
+    background-image: url(../resources/images/top/monopoly_mask_01_revert.png);
+  }
+  .section-top-monopoly .list-item.is-revert .item-info {
+    top: 0;
+  }
+  .section-top-monopoly .list-item.is-revert .item-info .item-title {
+    margin-top: 0.1rem;
+  }
+  .section-top-monopoly .list-item.is-revert .item-image::after {
+    background: linear-gradient(to top, rgba(1, 69, 55, 0) 55%, rgb(1, 69, 55) 87%);
+  }
+}
+@media only screen and (max-width: 767.98px) {
+  .section-top-monopoly .list-item {
+    width: 50%;
+    margin-bottom: 0.2rem;
+  }
+  .section-top-monopoly .monopoly-list .item-info {
+    font-size: 0.14rem;
+    line-height: 1.6;
+  }
+  .section-top-monopoly .title-common-primary {
+    width: 1rem;
+    height: auto;
+  }
+  .section-top-monopoly .heading-sub {
+    margin-top: -0.22rem;
+  }
+  .section-top-monopoly .monopoly-decoration {
+    width: 0.4rem;
+    margin-bottom: 0.3rem;
+  }
+  .section-top-monopoly .monopoly-heading {
+    margin-bottom: 0.5rem;
+  }
+}
+
+.section-top-monopoly.is-active .group-bg::before {
+  width: 100%;
+  transition: width 2s cubic-bezier(0.2, 0, 0.2, 1) 0.45s;
+}

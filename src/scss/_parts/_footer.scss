@@ -1,5 +1,5 @@
 @charset "utf-8";
-@use "../_base/base"as *;
+@use "../_base/base" as *;
 
 .footer-logo {
   display: block;
@@ -50,6 +50,11 @@
 @media only screen and (max-width: 767.98px) {
   .footer-common {
     padding: 0.48rem 0;
+
+    .footer-logo {
+      width: 2.4rem;
+      margin: 0 auto 0.3rem;
+    }
   }
 
   .footer-common .footer-note {
@@ -418,6 +423,12 @@
     width: 2rem;
     min-height: 0.4rem;
     padding: 0.06rem 0.3rem 0.04rem;
+
+    &::before {
+      width: 0.19rem;
+      height: 0.1rem;
+      margin-right: 0.16rem;
+    }
   }
 }
 
@@ -613,6 +624,12 @@
   @include tablet {
     .info-list {
       max-width: 50%;
+    }
+  }
+
+  @include mobile {
+    .list-item {
+      line-height: 1.5;
     }
   }
 }

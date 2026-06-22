@@ -985,6 +985,10 @@ html.is-touchable .trans:hover {
   .footer-common {
     padding: 0.48rem 0;
   }
+  .footer-common .footer-logo {
+    width: 2.4rem;
+    margin: 0 auto 0.3rem;
+  }
   .footer-common .footer-note {
     margin-top: 0.4rem;
     font-size: 0.12rem;
@@ -1285,6 +1289,11 @@ html.is-touchable .trans:hover {
     min-height: 0.4rem;
     padding: 0.06rem 0.3rem 0.04rem;
   }
+  .button-contact::before {
+    width: 0.19rem;
+    height: 0.1rem;
+    margin-right: 0.16rem;
+  }
 }
 .socials-list {
   margin: 0;
@@ -1460,6 +1469,11 @@ html.is-touchable .trans:hover {
 @media (min-width: 768px) and (max-width: 1024.98px) {
   .footer-info .info-list {
     max-width: 50%;
+  }
+}
+@media only screen and (max-width: 767.98px) {
+  .footer-info .list-item {
+    line-height: 1.5;
   }
 }
 
