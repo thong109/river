@@ -167,3 +167,21 @@
     opacity: 1;
   }
 }
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+
+@keyframes lineReveal {
+  to {
+    clip-path: inset(0 0 0 0);
+  }
+}
