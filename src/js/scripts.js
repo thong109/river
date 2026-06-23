@@ -1522,6 +1522,22 @@
           el: slider.querySelector('.swiper-pagination'),
           clickable: true,
         },
+        breakpoints: {
+          0: {
+            slidesPerGroup: 2,
+            autoplay: {
+              delay: 0,
+              disableOnInteraction: false,
+            },
+            speed: 3000,
+          },
+          768: {
+            slidesPerGroup: 3,
+          },
+          1025: {
+            slidesPerGroup: groupNum,
+          },
+        },
       });
     });
   };
