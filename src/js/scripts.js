@@ -431,6 +431,15 @@
       }
 
       s.cur = i;
+
+      /* Update dark bg for panel with .js-bg */
+      const currentPanel = panels[i];
+      if (currentPanel) {
+        const isBg = currentPanel.classList.contains("js-bg");
+        const isLocation = currentPanel.id === "section-location";
+        document.documentElement.classList.toggle("is-dark-bg", isBg && !isLocation);
+        document.documentElement.classList.toggle("is-dark-bg-02", isBg && isLocation);
+      }
     };
 
     /* ---------------- RELEASE ---------------- */
@@ -443,7 +452,7 @@
       s.lastPanel = s.cur;
       s.active = false;
       observer?.disable();
-      document.documentElement.classList.remove("is-dark-bg");
+      document.documentElement.classList.remove("is-dark-bg", "is-dark-bg-02");
       const normalScroll = document.querySelector(".normal-scroll");
 
       gsap.to(stage, {
@@ -616,7 +625,6 @@
 
       const updateDarkBg = () => {
         if (window.__APP_STATE__?.sliderState?.active) {
-          document.documentElement.classList.remove("is-dark-bg");
           return;
         }
         const anyVisible = bgSections.some((sec) => {
@@ -1411,7 +1419,6 @@
 
   const handleDarkBg = () => {
     if (window.innerWidth > mobileBreak) {
-      document.documentElement.classList.remove("is-dark-bg");
       return;
     }
 

@@ -377,6 +377,82 @@ html.is-touchable .trans:hover {
   display: none !important;
 }
 
+html.is-dark-bg .hamburger-menu {
+  border-color: #006a51;
+  color: #006a51;
+}
+html.is-dark-bg .hamburger-menu.on img {
+  content: url(../resources/images/common/header_logo_04.svg);
+}
+html.is-dark-bg .header-lang {
+  color: #3d4442;
+}
+html.is-dark-bg .header-lang path {
+  fill: #8b8b8b;
+}
+html.is-dark-bg .header-icon {
+  border: 1px solid #d3dfdc !important;
+}
+html.is-dark-bg .header-icon::before {
+  opacity: 0;
+}
+html.is-dark-bg .header-icon::after {
+  transform: translateY(0);
+  opacity: 1;
+}
+html.is-dark-bg .header-phone,
+html.is-dark-bg .header-cta {
+  color: #3d4442;
+}
+
+html.is-dark-bg-02 .header-lang {
+  color: #3d4442;
+}
+html.is-dark-bg-02 .header-lang path {
+  fill: #8b8b8b;
+}
+html.is-dark-bg-02 .header-icon {
+  border: 1px solid #d3dfdc !important;
+}
+html.is-dark-bg-02 .header-icon::before {
+  opacity: 0;
+}
+html.is-dark-bg-02 .header-icon::after {
+  transform: translateY(0);
+  opacity: 1;
+}
+html.is-dark-bg-02 .header-phone,
+html.is-dark-bg-02 .header-cta {
+  color: #3d4442;
+}
+
+.header-common.is-menu-open .header-icon::after {
+  opacity: 0 !important;
+}
+.header-common.is-menu-open .header-icon::before {
+  opacity: 1;
+}
+.header-common.is-menu-open .header-phone,
+.header-common.is-menu-open .header-cta {
+  color: #fff !important;
+}
+.header-common.is-menu-open .header-phone:hover .header-icon,
+.header-common.is-menu-open .header-cta:hover .header-icon {
+  border-color: rgba(255, 255, 255, 0.4);
+}
+.header-common.is-menu-open .header-phone:hover,
+.header-common.is-menu-open .header-cta:hover {
+  color: #fff;
+}
+.header-common.is-menu-open .header-phone:hover .header-icon::before,
+.header-common.is-menu-open .header-cta:hover .header-icon::before {
+  transform: translateY(0);
+  opacity: 1;
+}
+.header-common.is-menu-open .header-lang {
+  color: #fff;
+}
+
 .header-common {
   position: fixed;
   top: 0;
@@ -603,9 +679,13 @@ html.is-touchable .trans:hover {
   font-weight: 500;
   position: relative;
 }
+.header-hamburger.is-click-active .hamburger-menu {
+  border-color: rgba(255, 255, 255, 0.4);
+}
 .header-hamburger.is-click-active .hamburger-menu.off {
   opacity: 1;
   visibility: visible;
+  color: #fff;
 }
 .header-hamburger.is-click-active .hamburger-menu.on {
   opacity: 0;
@@ -629,7 +709,6 @@ html.is-touchable .trans:hover {
   border: 1px solid #fff;
   border-radius: 9999px;
   gap: 0.1rem;
-  transition: opacity 0.35s ease 0.2s;
 }
 .header-hamburger .hamburger-menu.on {
   opacity: 1;

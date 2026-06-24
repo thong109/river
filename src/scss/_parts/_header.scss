@@ -1,6 +1,108 @@
 @charset "utf-8";
 @use "../_base/base"as *;
 
+html.is-dark-bg {
+  .hamburger-menu {
+    border-color: #006a51;
+    color: #006a51;
+
+    &.on img {
+      content: url(../resources/images/common/header_logo_04.svg);
+    }
+  }
+
+  .header-lang {
+    color: #3d4442;
+
+    path {
+      fill: #8b8b8b;
+    }
+  }
+
+  .header-icon {
+    border: 1px solid #d3dfdc !important;
+
+    &::before {
+      opacity: 0;
+    }
+
+    &::after {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  .header-phone,
+  .header-cta {
+    color: #3d4442;
+  }
+}
+
+html.is-dark-bg-02 {
+  .header-lang {
+    color: #3d4442;
+
+    path {
+      fill: #8b8b8b;
+    }
+  }
+
+  .header-icon {
+    border: 1px solid #d3dfdc !important;
+
+    &::before {
+      opacity: 0;
+    }
+
+    &::after {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  .header-phone,
+  .header-cta {
+    color: #3d4442;
+  }
+}
+
+.header-common.is-menu-open {
+  .header-icon {
+    &::after {
+      opacity: 0 !important;
+    }
+
+    &::before {
+      opacity: 1;
+    }
+  }
+
+  .header-phone,
+  .header-cta {
+    color: #fff !important;
+  }
+
+  .header-phone:hover .header-icon,
+  .header-cta:hover .header-icon {
+    border-color: rgba(255, 255, 255, .4);
+  }
+
+  .header-phone:hover,
+  .header-cta:hover {
+    color: #fff;
+  }
+
+  .header-phone:hover .header-icon::before,
+  .header-cta:hover .header-icon::before {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  .header-lang {
+    color: #fff;
+  }
+}
+
 .header-common {
   position: fixed;
   top: 0;
@@ -310,9 +412,14 @@
   position: relative;
 
   &.is-click-active {
+    .hamburger-menu {
+      border-color: rgba(255, 255, 255, .4);
+    }
+
     .hamburger-menu.off {
       opacity: 1;
       visibility: visible;
+      color: #fff;
     }
 
     .hamburger-menu.on {
@@ -340,7 +447,6 @@
     border: 1px solid $color-light;
     border-radius: 9999px;
     gap: 0.1rem;
-    transition: opacity .35s ease .2s;
 
     &.on {
       opacity: 1;
