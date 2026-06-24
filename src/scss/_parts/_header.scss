@@ -120,7 +120,7 @@
     transition: border-color 0.35s ease;
     transition: border-color 0.35s ease;
     border-radius: 50%;
-    border: 1px solid #fff;
+    border: 1px solid rgba($color: #fff, $alpha: .4);
 
     &::after,
     &::before {

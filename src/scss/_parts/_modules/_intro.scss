@@ -131,8 +131,8 @@
 @media print,
 (min-width: 768px) {
   .load-icon {
-    width: 30vw;
-    height: 30vw;
+    width: 20vw;
+    height: 20vw;
   }
 }
 
@@ -147,7 +147,7 @@
   0% {
     -webkit-transform: scale(1);
     transform: scale(1);
-    stroke-dashoffset: 500;
+    stroke-dashoffset: 250;
   }
 
   80% {

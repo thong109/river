@@ -27,6 +27,7 @@
     transform: translateX(-50%);
     display: block;
     background: url(../resources/images/common/decor_icon_01.svg) center center / contain no-repeat;
+    filter: brightness(0) invert(1);
   }
 
   &::after {
@@ -36,7 +37,8 @@
     top: 0;
     display: block;
     background: url(../resources/images/common/arrow_icon_01.svg) center center / contain no-repeat;
-    opacity: .5;
+    opacity: 0;
+    animation: downUp 2s infinite;
   }
 
   @include desktop {
@@ -70,5 +72,18 @@
       width: 0.14rem;
       height: 0.14rem;
     }
+  }
+}
+
+
+@keyframes downUp {
+  0% {
+    opacity: 0;
+    transform: translateY(0);
+  }
+
+  100% {
+    opacity: .5;
+    transform: translateY(0.2rem);
   }
 }

@@ -41,19 +41,37 @@ block content
   nav.nav#nav.hidden
     .nav-item(data-target="section-home")
       .nav-line
-      span.nav-label THE EMERALD<br>BOULEVARD
+      span.nav-label home
+    .nav-item(data-target="section-icon")
+      .nav-line
+      span.nav-label icon
+    .nav-item(data-target="section-overview")
+      .nav-line
+      span.nav-label overview
+    .nav-item(data-target="section-video")
+      .nav-line
+      span.nav-label video
     .nav-item(data-target="section-location")
       .nav-line
-      span.nav-label TỔNG QUAN
-    .nav-item(data-target="section-utility")
+      span.nav-label location
+    .nav-item(data-target="section-architecture")
       .nav-line
-      span.nav-label TIỆN ÍCH
-    .nav-item(data-target="section-central")
+      span.nav-label architecture
+    .nav-item(data-target="section-utilities")
       .nav-line
-      span.nav-label MẶT BẰNG
-    .nav-item(data-target="section-gallery")
+      span.nav-label utilities
+    .nav-item(data-target="section-monopoly")
       .nav-line
-      span.nav-label THƯ VIỆN
+      span.nav-label monopoly
+    .nav-item(data-target="section-news")
+      .nav-line
+      span.nav-label news
+    .nav-item(data-target="section-partner")
+      .nav-line
+      span.nav-label partner
+    .nav-item(data-target="section-footer")
+      .nav-line
+      span.nav-label footer
   main
     .slider-stage(aria-hidden="true")
       section.panel.section-top-keyvisual#section-home
@@ -145,9 +163,9 @@ block content
             .controls.hide
               .left-button
                 .video-time
-                  time.time-elapsed 0:18
-                  span  /
-                  time.duration 3:04
+                  time.time-elapsed
+                  span  / 
+                  time.duration
                 button.playback-button
                   svg.playback-icons(viewBox="0 0 30 30")
                     g.pause-icon
@@ -195,7 +213,7 @@ block content
                 .content-wrapper
                   h2.title-common-primary.hero-title.js-title
                     span.title-small VỊ TRÍ
-                    span.title-large CẬN THỦY ĐỘC TÔN
+                    span.title-large CẬN THỦY
                   .paragraph-common.hero-sub.js-title
                     p Sở hữu vị trí “có một không hai” bên dòng sông Sài Gòn, The Emerald River Park mở ra một không gian sống được nâng niu bởi thiên nhiên, mặt nước và những trải nghiệm độc bản giữa lòng đô thị.
                     p Từ bến du thuyền bên sông đến những tầm nhìn khoáng đạt hướng thủy, mỗi ngày trở về là một hành trình tận hưởng trọn vẹn. Nơi mỗi khoảnh khắc chạm bến đều kiêu hãnh cất lên bản tuyên ngôn về một "Chất Sống Tuyệt Đích" bên sông.
@@ -281,7 +299,7 @@ block content
                     figure.monopoly-decoration 
                       img.object-common(src=imgPC+"monopoly_decoration_01.svg" width="55" height="20" alt="leaf" loading="lazy")
                     .monopoly-logo
-                      img.object-common(src=imgPC+"monopoly_logo_01.png" width="229" height="48" alt="THE EMERALD RIVER PARK" loading="lazy")
+                      img.object-common(src=imgPC+"monopoly_logo_01.svg" width="229" height="48" alt="THE EMERALD RIVER PARK" loading="lazy")
                   .monopoly-list 
                     ul.list-wrapper 
                       li.list-item 
@@ -320,7 +338,7 @@ block content
                             img.object-common(src=imgPC+"monopoly_img_06.jpg" width="260" height="220" alt="Bảo chứng vững vàng" loading="lazy")
                           .item-info
                             p.item-title Bảo chứng<br>vững vàng
-      section.panel.section-top-partner
+      section.panel.section-top-partner.js-bg#section-partner
         .group-central
           .inner
             .central-bg
@@ -434,7 +452,7 @@ block content
             .central-bg
               .wrapper
                 h2.title-common-primary.is-center.hero-title.js-title
-                  span.title-large TIN TỨC NỔI BẬT
+                  span.title-large TIN TỨC <span class="is-highlight">NỔI BẬT</span>
                 .list-top-news.hero-sub.js-title
                   ul.list-wrapper
                     li.list-item

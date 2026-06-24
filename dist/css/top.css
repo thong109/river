@@ -117,7 +117,7 @@
 }
 .section-top-overview .title-common-primary {
   text-align: right;
-  font-family: "SVNGotham", sans-serif;
+  font-family: "SVNGothamBook", sans-serif;
 }
 .section-top-overview .wrapper {
   position: relative;
@@ -205,6 +205,7 @@
 }
 .list-top-overview .content-detail {
   margin: 0;
+  font-family: "ftv", sans-serif;
 }
 @media print, (min-width: 768px) {
   .list-top-overview {
@@ -402,6 +403,13 @@
 }
 .section-top-video .video-time {
   color: #fff;
+  width: 1.2rem;
+  flex: 0 0 auto;
+}
+.section-top-video .video-time .time-elapsed,
+.section-top-video .video-time .duration {
+  width: 0.42rem;
+  display: inline-block;
 }
 .section-top-video .player-vid {
   display: flex;
@@ -719,6 +727,9 @@
 }
 .section-top-partner .title-common-primary .title-large {
   color: #006a51;
+}
+.section-top-partner .title-common-secondary {
+  font-weight: 700;
 }
 .section-top-partner .central-bg {
   background: url(../resources/images/top/partner_img_01.jpg) center center/cover no-repeat;

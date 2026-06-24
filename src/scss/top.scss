@@ -251,6 +251,7 @@
 
   .content-detail {
     margin: 0;
+    font-family: $font-ftv;
   }
 
   @include desktop {
@@ -473,6 +474,14 @@
 
   .video-time {
     color: #fff;
+    width: 1.2rem;
+    flex: 0 0 auto;
+
+    .time-elapsed,
+    .duration {
+      width: .42rem;
+      display: inline-block;
+    }
   }
 
   .player-vid {
@@ -834,6 +843,10 @@
     .title-large {
       color: $color-default;
     }
+  }
+
+  .title-common-secondary {
+    font-weight: 700;
   }
 
   .central-bg {

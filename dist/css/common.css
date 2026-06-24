@@ -241,7 +241,7 @@ input[type=search] {
   font-display: swap;
 }
 @font-face {
-  font-family: SVNGotham;
+  font-family: SVNGothamBook;
   font-style: normal;
   font-weight: 400;
   src: url("./../resources/fonts/SVN-Gotham-Book.otf") format("opentype");
@@ -282,7 +282,7 @@ html {
 body {
   background: #006a51;
   color: #006a51;
-  font-family: "SVNGotham", sans-serif;
+  font-family: "SVNGothamBook", sans-serif;
   font-size: 0.16rem;
   font-weight: 400;
   line-height: 1.5;
@@ -481,7 +481,7 @@ html.is-touchable .trans:hover {
   transition: border-color 0.35s ease;
   transition: border-color 0.35s ease;
   border-radius: 50%;
-  border: 1px solid #fff;
+  border: 1px solid rgba(255, 255, 255, 0.4);
 }
 .header-common .header-icon::after, .header-common .header-icon::before {
   position: absolute;
@@ -1158,14 +1158,14 @@ html.is-touchable .trans:hover {
   border: none;
   background: transparent;
   border-bottom: 1px solid #dee2e1;
-  color: #006a51;
+  color: #48665f;
 }
 .input-common::-moz-placeholder {
-  color: #006a51;
+  color: #48665f;
   text-transform: uppercase;
 }
 .input-common::placeholder {
-  color: #006a51;
+  color: #48665f;
   text-transform: uppercase;
 }
 .input-common:focus {
@@ -1195,15 +1195,15 @@ html.is-touchable .trans:hover {
   border: none;
   background: transparent;
   border-bottom: 1px solid #dee2e1;
-  color: #006a51;
+  color: #48665f;
   resize: none;
 }
 .textarea-common::-moz-placeholder {
-  color: #006a51;
+  color: #48665f;
   text-transform: uppercase;
 }
 .textarea-common::placeholder {
-  color: #006a51;
+  color: #48665f;
   text-transform: uppercase;
 }
 .textarea-common:focus {
@@ -1557,6 +1557,7 @@ html.is-touchable .trans:hover {
   transform: translateX(-50%);
   display: block;
   background: url(../resources/images/common/decor_icon_01.svg) center center/contain no-repeat;
+  filter: brightness(0) invert(1);
 }
 .button-common-primary::after {
   position: absolute;
@@ -1565,7 +1566,8 @@ html.is-touchable .trans:hover {
   top: 0;
   display: block;
   background: url(../resources/images/common/arrow_icon_01.svg) center center/contain no-repeat;
-  opacity: 0.5;
+  opacity: 0;
+  animation: downUp 2s infinite;
 }
 @media print, (min-width: 768px) {
   .button-common-primary {
@@ -1599,6 +1601,16 @@ html.is-touchable .trans:hover {
   }
 }
 
+@keyframes downUp {
+  0% {
+    opacity: 0;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0.5;
+    transform: translateY(0.2rem);
+  }
+}
 .stroke-line {
   transform-origin: center center;
   transition: all 0.6s ease-in-out;
@@ -1694,8 +1706,8 @@ html.is-touchable .trans:hover {
 
 @media print, (min-width: 768px) {
   .load-icon {
-    width: 30vw;
-    height: 30vw;
+    width: 20vw;
+    height: 20vw;
   }
 }
 @media only screen and (max-width: 767.98px) {
@@ -1707,7 +1719,7 @@ html.is-touchable .trans:hover {
 @keyframes DrawStroke {
   0% {
     transform: scale(1);
-    stroke-dashoffset: 500;
+    stroke-dashoffset: 250;
   }
   80% {
     transform: none;
@@ -1754,6 +1766,10 @@ html.is-touchable .trans:hover {
 }
 .title-common-primary.is-green {
   color: #006a51;
+}
+.title-common-primary .is-highlight {
+  color: #800000;
+  display: inline;
 }
 @media print, (min-width: 768px) {
   .title-common-primary {

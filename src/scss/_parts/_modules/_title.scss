@@ -23,6 +23,11 @@
     color: $color-default;
   }
 
+  .is-highlight {
+    color: $color-red;
+    display: inline;
+  }
+
   @include desktop {
     margin-bottom: 0.38rem;
 
