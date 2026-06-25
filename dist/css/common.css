@@ -230,21 +230,21 @@ input[type=search] {
   font-family: ftv;
   font-style: normal;
   font-weight: 400;
-  src: url("./../resources/fonts/1FTV-VIP-British-Green.ttf") format("truetype");
+  src: url("../resources/fonts/1FTV-VIP-British-Green.ttf") format("truetype");
   font-display: swap;
 }
 @font-face {
   font-family: ftv;
   font-style: italic;
   font-weight: 400;
-  src: url("./../resources/fonts/1FTVVIPBritishGreen-Italic.ttf") format("truetype");
+  src: url("../resources/fonts/1FTVVIPBritishGreen-Italic.ttf") format("truetype");
   font-display: swap;
 }
 @font-face {
   font-family: SVNGothamBook;
   font-style: normal;
   font-weight: 400;
-  src: url("./../resources/fonts/SVN-Gotham-Book.otf") format("opentype");
+  src: url("../resources/fonts/SVN-Gotham-Book.otf") format("opentype");
   font-display: swap;
 }
 html {
@@ -404,13 +404,13 @@ html.is-dark-bg .header-phone,
 html.is-dark-bg .header-cta {
   color: #3d4442;
 }
+html.is-dark-bg .button-top {
+  border-color: #000;
+}
+html.is-dark-bg .button-top img {
+  filter: brightness(0);
+}
 
-html.is-dark-bg-02 .header-lang {
-  color: #3d4442;
-}
-html.is-dark-bg-02 .header-lang path {
-  fill: #8b8b8b;
-}
 html.is-dark-bg-02 .header-icon {
   border: 1px solid #d3dfdc !important;
 }
@@ -1496,6 +1496,51 @@ html.is-dark-bg-02 .header-cta {
     padding-left: 0;
   }
 }
+.button-top {
+  position: fixed;
+  z-index: 999;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease, background-color 0.35s ease;
+  border-radius: 50%;
+  transform: rotate(-90deg);
+  border: 1px solid #ffffff;
+  background-color: transparent;
+}
+.button-top img {
+  width: auto;
+}
+.button-top:hover {
+  background-color: #006a51;
+}
+.button-top.is-active {
+  opacity: 1;
+  visibility: visible;
+}
+
+@media print, (min-width: 768px) {
+  .button-top {
+    width: 0.8rem;
+    height: 0.8rem;
+    bottom: 0.2rem;
+    left: 0.2rem;
+  }
+}
+@media only screen and (max-width: 767.98px) {
+  .button-top {
+    width: 0.4rem;
+    height: 0.4rem;
+    bottom: 0.2rem;
+    left: 0.2rem;
+  }
+  .button-top img {
+    max-width: 0.17rem;
+  }
+}
 .button-chat {
   position: fixed;
   z-index: 999;
@@ -1524,6 +1569,37 @@ html.is-dark-bg-02 .header-cta {
     width: 0.4rem;
     height: 0.4rem;
     bottom: 0.2rem;
+    right: 0.2rem;
+  }
+}
+.button-360 {
+  position: fixed;
+  z-index: 999;
+  cursor: pointer;
+  display: block;
+}
+
+.button-360 .button-wrapper {
+  transition: transform 0.3s ease;
+}
+
+.button-360:hover .button-wrapper {
+  transform: scale(1.1);
+}
+
+@media print, (min-width: 768px) {
+  .button-360 {
+    width: 0.52rem;
+    height: 0.45rem;
+    bottom: 0.95rem;
+    right: 0.2rem;
+  }
+}
+@media only screen and (max-width: 767.98px) {
+  .button-360 {
+    width: 0.4rem;
+    height: 0.4rem;
+    bottom: 0.7rem;
     right: 0.2rem;
   }
 }
@@ -1627,6 +1703,12 @@ html.is-dark-bg-02 .header-cta {
 }
 .button-common-primary.is-right::after {
   transform: rotate(-90deg);
+  animation: none;
+  opacity: 1;
+  transition: transform 0.35s ease;
+}
+.button-common-primary.is-right:hover::after {
+  transform: rotate(-90deg) translateY(0.1rem);
 }
 .button-common-primary::before {
   position: absolute;

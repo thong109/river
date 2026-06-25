@@ -277,15 +277,48 @@ block content
         .group-central
           .inner
             .group-bg
-              .bg-img
-                img.object-common(src=imgPC+"utilities_bg_01.jpg" width="1920" height="980" alt="" loading="eager")
-              .wrapper
-                h2.title-common-primary.hero-title.js-title
-                  img.image-common(src=imgPC+"utilities_title.svg" width="676" height="278" alt="tiện ích resort tầng không cho cuôc sống đa sắc thái đa xúc cảm" loading="eager")
-                .utilities-body
-                  p.utilities-detail Tầng 3: Hồ bơi vô cực view sông
-                  .block-top-utilities
-                    p.block-title Mặt bằng tiện ích
+              h2.title-common-primary.hero-title.js-title
+                img.image-common(
+                  src=imgPC+"utilities_title.svg"
+                  width="676"
+                  height="278"
+                  alt=""
+                  loading="lazy"
+                )
+              .list-utilities-slider.swiper.js-utilities-slider
+                .swiper-wrapper
+                  .swiper-slide
+                    .slide-img
+                      img.object-common(
+                        src=imgPC+"utilities_bg_01.jpg"
+                        width="1920"
+                        height="980"
+                        alt=""
+                        loading="eager"
+                      )
+                    .slide-content
+                      .utilities-body
+                        p.utilities-detail Tầng 3: Hồ bơi vô cực view sông
+                        .block-top-utilities
+                          p.block-title Mặt bằng tiện ích
+                  .swiper-slide
+                    .slide-img
+                      img.object-common(
+                        src=imgPC+"utilities_bg_01.jpg"
+                        width="1920"
+                        height="980"
+                        alt=""
+                        loading="lazy"
+                      )
+                    .slide-content
+                      .utilities-body
+                        p.utilities-detail Tầng 5: Sky Garden
+                        .block-top-utilities
+                          p.block-title Mặt bằng tiện ích
+                .slide-controller
+                  .button-prev
+                  .swiper-pagination
+                  .button-next
       section.panel.section-top-monopoly
         .group-central
           .inner
@@ -297,9 +330,9 @@ block content
                       img.object-common(src=imgPC+"monopoly_title_01.svg" width="137" height="205" alt="06" loading="lazy")
                     h3.heading-sub ĐẶC QUYỀN
                     figure.monopoly-decoration 
-                      img.object-common(src=imgPC+"monopoly_decoration_01.svg" width="55" height="20" alt="leaf" loading="lazy")
+                      img.image-common(src=imgPC+"monopoly_decoration_01.svg" width="55" height="20" alt="leaf" loading="lazy")
                     .monopoly-logo
-                      img.object-common(src=imgPC+"monopoly_logo_01.svg" width="229" height="48" alt="THE EMERALD RIVER PARK" loading="lazy")
+                      img.image-common(src=imgPC+"monopoly_logo_01.svg" width="152" height="31" alt="THE EMERALD RIVER PARK" loading="lazy")
                   .monopoly-list 
                     ul.list-wrapper 
                       li.list-item 
@@ -446,7 +479,7 @@ block content
                         .item-image
                           img(src=imgPC+"partner_img_15.png" width="" height="" loading="eager" alt="")
                     .swiper-pagination
-      section.md.panel.section-top-news.js-bg#section-news
+      section.panel.section-top-news.js-bg#section-news
         .group-central
           .inner
             .central-bg
@@ -489,8 +522,8 @@ block content
           .inner
             .central-bg
               .wrapper
-                a.footer-logo.trans(href=path+"#")
-                  img.image-common(src=imgCommonPC+"footer_logo.svg" width="153" height="90" alt="The emerald river park" loading="lazy")
+                a.footer-logo.trans.hero-title.js-title(href=path+"/")
+                  img.image-common(src=imgCommonPC+"header_logo.svg" width="153" height="90" alt="The emerald river park" loading="lazy")
                 .footer-wrapper.hero-title.js-title
                   .footer-common-information
                     ul.information-list

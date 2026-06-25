@@ -36,17 +36,17 @@ html.is-dark-bg {
   .header-cta {
     color: #3d4442;
   }
+
+  .button-top {
+    border-color: #000;
+
+    img {
+      filter: brightness(0);
+    }
+  }
 }
 
 html.is-dark-bg-02 {
-  .header-lang {
-    color: #3d4442;
-
-    path {
-      fill: #8b8b8b;
-    }
-  }
-
   .header-icon {
     border: 1px solid #d3dfdc !important;
 

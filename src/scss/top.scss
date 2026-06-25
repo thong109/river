@@ -239,6 +239,7 @@
 
   .content-item {
     flex: 1;
+    font-family: $font-ftv;
 
     &:last-child {
       margin-bottom: 0;
@@ -727,6 +728,18 @@
     z-index: 1;
   }
 
+  .title-common-primary {
+    position: relative;
+    z-index: 11;
+  }
+
+  .utilities-body {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: .2rem;
+  }
+
   @include desktop {
     min-height: 9.8rem;
 
@@ -736,7 +749,7 @@
     }
 
     .title-common-primary {
-      padding-left: 3.86rem;
+      padding-right: 3.86rem;
       width: 10.62rem;
     }
 
@@ -744,13 +757,7 @@
       padding-bottom: .28rem;
       font-size: .18rem;
       line-height: calc(21.6 / 18);
-    }
-
-    .utilities-body {
-      display: flex;
-      align-items: flex-end;
-      justify-content: space-between;
-      gap: .2rem;
+      max-width: 7rem;
     }
   }
 
@@ -759,12 +766,132 @@
 
     .group-bg {
       padding: 0.4rem 0;
+      justify-content: flex-start;
     }
 
     .utilities-detail {
-      padding-bottom: .28rem;
       font-size: .18rem;
       line-height: calc(21.6 / 18);
+    }
+
+    .title-common-primary {
+      padding: 0 .3rem;
+    }
+  }
+}
+
+.list-utilities-slider {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  z-index: 10;
+
+  .swiper-slide {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    position: relative;
+  }
+
+  .slide-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .slide-content {
+    position: relative;
+  }
+
+  .button-next,
+  .button-prev {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: .3rem;
+    height: .3rem;
+
+    &::after {
+      content: '';
+      width: 16px;
+      height: 16px;
+      border-top: 2px solid #fff;
+      border-left: 2px solid #fff;
+      font-size: 0;
+      display: block;
+    }
+  }
+
+  .button-prev::after {
+    transform: rotate(-45deg);
+  }
+
+  .button-next::after {
+    transform: rotate(135deg);
+  }
+
+  .swiper-pagination {
+    position: unset;
+  }
+
+  .slide-controller {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 50%;
+    margin: 0 auto;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    gap: .1rem;
+    margin-bottom: .5rem;
+  }
+
+  .swiper-pagination {
+    color: #fff;
+    line-height: 1.2;
+  }
+
+  .swiper-pagination-total {
+    opacity: .6;
+  }
+
+  @include desktop {
+    .swiper-slide {
+      padding: .3rem 0;
+    }
+
+    .slide-content {
+      max-width: 16.72rem;
+      margin: 0 auto;
+      width: calc(100% - .3rem);
+    }
+
+    .swiper-pagination-current {
+      font-size: .25rem;
+    }
+  }
+
+  @include mobile {
+    .slide-content {
+      padding: 0 .2rem .7rem;
+    }
+
+    .swiper-pagination-current {
+      font-size: .22rem;
+    }
+
+    .slide-controller {
+      margin-bottom: .2rem;
+      right: .2rem;
+      left: unset;
+      transform: none;
     }
   }
 }
@@ -864,6 +991,8 @@
   }
 
   @include mobile {
+    margin-bottom: -0.02rem;
+
     .central-bg {
       padding: 0.4rem 0;
     }
@@ -1102,6 +1231,20 @@
       margin-top: 0.76rem;
     }
   }
+
+  @include mobile {
+    .central-bg {
+      padding: .4rem 0;
+
+      &::before {
+        height: 3.88rem;
+      }
+    }
+
+    .news-controller {
+      margin-top: 0.4rem;
+    }
+  }
 }
 
 .list-top-news {
@@ -1224,6 +1367,45 @@
 
     .list-item {
       padding: 0 0.1rem;
+    }
+  }
+
+  @include mobile {
+    .list-item {
+      margin-bottom: .2rem;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    .item-image {
+      padding-top: calc(288 / 432 * 100%);
+    }
+
+    .item-content {
+      padding: 0.3rem;
+
+      &::before {
+        width: 0.56rem;
+        height: 0.56rem;
+        margin: 0 0.3rem 0.33rem 0;
+      }
+    }
+
+    .content-title {
+      margin-bottom: 0.2rem;
+      font-size: 0.2rem;
+      line-height: calc(3 / 2);
+    }
+
+    .date-day {
+      font-size: 0.3rem;
+    }
+
+    .date-time {
+      font-size: 0.16rem;
+      line-height: calc(36 / 16);
     }
   }
 }
@@ -1383,8 +1565,7 @@
     }
 
     .monopoly-logo {
-      width: 2.29rem;
-      height: 0.48rem;
+      width: 1.52rem;
     }
 
     .list-wrapper {

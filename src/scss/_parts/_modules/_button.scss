@@ -16,6 +16,15 @@
   &.is-right {
     &::after {
       transform: rotate(-90deg);
+      animation: none;
+      opacity: 1;
+      transition: transform .35s ease;
+    }
+
+    &:hover {
+      &::after {
+        transform: rotate(-90deg) translateY(0.1rem);
+      }
     }
   }
 

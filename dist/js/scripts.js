@@ -353,6 +353,7 @@
           panels[i].querySelectorAll(".swiper").forEach((el) => {
             if (el.swiper) el.swiper.update();
           });
+          window.dispatchEvent(new CustomEvent("slider:panel-change", { detail: { index: i } }));
           cb?.();
         },
       });
@@ -365,8 +366,8 @@
         if (images[s.cur]) {
           tl.to(
             images[s.cur], {
-              yPercent: -14 * d,
-            },
+            yPercent: -14 * d,
+          },
             0,
           );
         }
@@ -376,11 +377,11 @@
       if (curTargets.length) {
         tl.fromTo(
           curTargets, {
-            yPercent: (j) => (j ? -100 * d : 100 * d),
-            immediateRender: false,
-          }, {
-            yPercent: 0,
-          },
+          yPercent: (j) => (j ? -100 * d : 100 * d),
+          immediateRender: false,
+        }, {
+          yPercent: 0,
+        },
           0,
         );
       }
@@ -388,10 +389,10 @@
       if (images[i]) {
         tl.fromTo(
           images[i], {
-            yPercent: 14 * d,
-          }, {
-            yPercent: 0,
-          },
+          yPercent: 14 * d,
+        }, {
+          yPercent: 0,
+        },
           0,
         );
       }
@@ -400,14 +401,14 @@
         headings[i].forEach((h, j) => {
           tl.fromTo(
             h, {
-              autoAlpha: 0,
-              yPercent: 200 * d,
-            }, {
-              autoAlpha: 1,
-              yPercent: 0,
-              duration: 0.9,
-              ease: "power2.out",
-            },
+            autoAlpha: 0,
+            yPercent: 200 * d,
+          }, {
+            autoAlpha: 1,
+            yPercent: 0,
+            duration: 0.9,
+            ease: "power2.out",
+          },
             0.18,
           );
         });
@@ -417,14 +418,14 @@
         subs[i].forEach((sub, j) => {
           tl.fromTo(
             sub, {
-              autoAlpha: 0,
-              yPercent: 200 * d,
-            }, {
-              autoAlpha: 1,
-              yPercent: 0,
-              duration: 0.8,
-              ease: "power2.out",
-            },
+            autoAlpha: 0,
+            yPercent: 200 * d,
+          }, {
+            autoAlpha: 1,
+            yPercent: 0,
+            duration: 0.8,
+            ease: "power2.out",
+          },
             0.28,
           );
         });
@@ -521,6 +522,7 @@
           updateLogo(target);
           observer?.enable();
           onDone?.();
+          window.dispatchEvent(new CustomEvent("slider:panel-change", { detail: { index: target } }));
 
           setTimeout(() => {
             window.dispatchEvent(new Event("scroll"));
@@ -778,19 +780,19 @@
     targets.forEach((el) => {
       gsap.fromTo(
         el, {
-          autoAlpha: 0,
-          y: 100,
-        }, {
-          autoAlpha: 1,
-          y: 0,
-          duration: 0.8,
-          ease: "power2.out",
-          scrollTrigger: {
-            trigger: el,
-            start: "top 85%",
-            toggleActions: "play none none none",
-          },
+        autoAlpha: 0,
+        y: 100,
+      }, {
+        autoAlpha: 1,
+        y: 0,
+        duration: 0.8,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: el,
+          start: "top 85%",
+          toggleActions: "play none none none",
         },
+      },
       );
     });
   };
@@ -910,7 +912,7 @@
       hidePlayerButton();
       const playPromise = video.play();
       if (playPromise) {
-        playPromise.catch(() => {});
+        playPromise.catch(() => { });
       }
     };
 
@@ -958,8 +960,8 @@
 
           updateVideoState(entry.isIntersecting);
         }, {
-          threshold: 0.35,
-        },
+        threshold: 0.35,
+      },
       );
 
       observer.observe(section);
@@ -970,8 +972,8 @@
           const rect = section.getBoundingClientRect();
           updateVideoState(rect.top < window.innerHeight * 0.65 && rect.bottom > window.innerHeight * 0.35);
         }, {
-          passive: true,
-        },
+        passive: true,
+      },
       );
     }
 
@@ -1080,77 +1082,6 @@
         initMobileAnimations();
       }, 600);
     }, 1200);
-  };
-
-  const sliderIntroduction = () => {
-    const sliders = document.querySelectorAll(".js-slider-introduction");
-    if (!sliders.length) return;
-
-    sliders.forEach((slider) => {
-      const sliderThumbnailsDOM = slider.querySelector(
-        '.swiper[data-slider-role="slider-thumbnails"]',
-      );
-      const sliderMainDOM = slider.querySelector(
-        '.swiper[data-slider-role="slider-main"]',
-      );
-
-      if (!sliderThumbnailsDOM || !sliderMainDOM) return;
-
-      const sliderThumbnailsWrapper =
-        sliderThumbnailsDOM.querySelector(".swiper-wrapper");
-      sliderThumbnailsWrapper.innerHTML = "";
-      const slideMainSlides = sliderMainDOM.querySelectorAll(".swiper-slide");
-      slideMainSlides.forEach((slide) => {
-        const thumbnail = slide.querySelector(".thumbnail-introduction img");
-        if (thumbnail) {
-          const nextThumbSrc = thumbnail.dataset.nextThumb || thumbnail.src;
-          const thumbnailItem = document.createElement("div");
-          thumbnailItem.className = "swiper-slide";
-          thumbnailItem.innerHTML = `<figure><img class="object-common" src="${nextThumbSrc}" alt="${thumbnail.alt || ""}" /></figure>`;
-          sliderThumbnailsWrapper.appendChild(thumbnailItem);
-        }
-      });
-
-      const sliderThumbnails = new Swiper(sliderThumbnailsDOM, {
-        loop: true,
-        speed: 500,
-        direction: "vertical",
-        slidesPerView: 1,
-        spaceBetween: 0,
-        allowTouchMove: false,
-        slideToClickedSlide: false,
-        simulateTouch: false,
-        keyboard: false,
-        mousewheel: false,
-      });
-
-      const sliderMain = new Swiper(sliderMainDOM, {
-        loop: true,
-        speed: 1500,
-        slidesPerView: 1,
-        spaceBetween: 0,
-        effect: "fade",
-        fadeEffect: {
-          crossFade: true,
-        },
-        pagination: {
-          el: slider.querySelector('[data-slider-role="pagination"]'),
-          clickable: true,
-          type: "fraction",
-          renderFraction: function (currentClass, totalClass) {
-            return `<span class="${currentClass}" data-slider-role="pagination-current"></span>
-                  <span class="${totalClass}" data-slider-role="pagination-total"></span>`;
-          },
-        },
-        navigation: {
-          nextEl: slider.querySelector('[data-slider-role="arrow-next"]'),
-        },
-      });
-
-      sliderMain.on("realIndexChange", () => {
-        sliderThumbnails.slideToLoop(sliderMain.realIndex);
-      });
-    });
   };
 
   const scrollPage = () => {
@@ -1314,19 +1245,19 @@
     fadeInElements.forEach((element) => {
       gsap.fromTo(
         element, {
-          opacity: 0,
-          y: 50,
-        }, {
-          opacity: 1,
-          y: 0,
-          duration: 0.8,
-          ease: "power2.out",
-          scrollTrigger: {
-            trigger: element,
-            start: "top 80%",
-            toggleActions: "play none none reverse",
-          },
+        opacity: 0,
+        y: 50,
+      }, {
+        opacity: 1,
+        y: 0,
+        duration: 0.8,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: element,
+          start: "top 80%",
+          toggleActions: "play none none reverse",
         },
+      },
       );
     });
   };
@@ -1641,8 +1572,8 @@
         translateY = touch.clientY / currentZoom - startY;
         updateUI();
       }, {
-        passive: false,
-      },
+      passive: false,
+    },
     );
 
     window.addEventListener("touchend", () => {
@@ -1650,6 +1581,104 @@
     });
 
     updateUI();
+  };
+
+  const utilitiesSlider = () => {
+    const sliders = document.querySelectorAll('.js-utilities-slider');
+    if (!sliders.length) return;
+
+    sliders.forEach((slider) => {
+      new Swiper(slider, {
+        loop: true,
+        speed: 1000,
+
+        autoplay: {
+          delay: 5000,
+          disableOnInteraction: false,
+        },
+        allowTouchMove: false,
+
+        pagination: {
+          el: slider.querySelector('.swiper-pagination'),
+          type: 'fraction',
+
+          formatFractionCurrent(number) {
+            return number;
+          },
+
+          formatFractionTotal(number) {
+            return number;
+          },
+
+          renderFraction(currentClass, totalClass) {
+            return `
+            <span class="${currentClass}"></span>
+            <span class="slash"> / </span>
+            <span class="${totalClass}"></span>
+          `;
+          },
+        },
+        navigation: {
+          nextEl: '.js-utilities-slider .button-next',
+          prevEl: '.js-utilities-slider .button-prev',
+        },
+        breakpoints: {
+          0: {
+            allowTouchMove: true,
+          },
+          768: {
+            allowTouchMove: false,
+          }
+        }
+      });
+    });
+  };
+
+  const buttonTop = () => {
+    const $btn = $(".js-button-top");
+    if (!$btn.length) return;
+
+    if (isDesktop()) {
+      const toggleDesktop = () => {
+        const s = window.__APP_STATE__?.sliderState;
+        const hidden = !s || (s?.active && s?.cur <= 0);
+        $btn.toggleClass("is-active", !hidden);
+      };
+
+      toggleDesktop();
+      window.addEventListener("slider:panel-change", toggleDesktop);
+      window.addEventListener("slider:released", toggleDesktop);
+
+      $btn.on("click", () => {
+        const s = window.__APP_STATE__?.sliderState;
+        if (s?.active) {
+          const firstNav = document.querySelector('.nav-item');
+          if (firstNav) firstNav.click();
+        } else {
+          $("html, body").animate({ scrollTop: 0 }, 500);
+        }
+      });
+
+      return;
+    }
+
+    const threshold = 300;
+
+    const toggle = () => {
+      const scrollTop = $(window).scrollTop();
+      $btn.toggleClass("is-active", scrollTop > threshold);
+    };
+
+    toggle();
+    $(window).on("scroll", toggle);
+
+    $btn.on("click", () => {
+      $("html, body").animate({
+          scrollTop: 0,
+        },
+        500,
+      );
+    });
   };
 
   window.WebFontConfig = {
@@ -1687,4 +1716,6 @@
   partnersSlider();
   topVideoPlayOnScroll();
   initMapZoom();
+  utilitiesSlider();
+  buttonTop();
 })();

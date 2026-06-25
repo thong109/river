@@ -568,6 +568,58 @@
   }
 }
 
+.button-top {
+  position: fixed;
+  z-index: 999;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease, background-color .35s ease;
+  border-radius: 50%;
+  transform: rotate(-90deg);
+  border: 1px solid #ffffff;
+  background-color: transparent;
+
+  img {
+    width: auto;
+  }
+
+  &:hover {
+    background-color: #006a51;
+  }
+
+  &.is-active {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+@media print,
+(min-width: 768px) {
+  .button-top {
+    width: 0.8rem;
+    height: 0.8rem;
+    bottom: 0.2rem;
+    left: 0.2rem;
+  }
+}
+
+@media only screen and (max-width: 767.98px) {
+  .button-top {
+    width: 0.4rem;
+    height: 0.4rem;
+    bottom: 0.2rem;
+    left: 0.2rem;
+
+    img {
+      max-width: .17rem;
+    }
+  }
+}
+
 .button-chat {
   position: fixed;
   z-index: 999;
@@ -598,6 +650,40 @@
     width: 0.4rem;
     height: 0.4rem;
     bottom: 0.2rem;
+    right: 0.2rem;
+  }
+}
+
+.button-360 {
+  position: fixed;
+  z-index: 999;
+  cursor: pointer;
+  display: block;
+}
+
+.button-360 .button-wrapper {
+  transition: transform 0.3s ease;
+}
+
+.button-360:hover .button-wrapper {
+  transform: scale(1.1);
+}
+
+@media print,
+(min-width: 768px) {
+  .button-360 {
+    width: 0.52rem;
+    height: 0.45rem;
+    bottom: .95rem;
+    right: 0.2rem;
+  }
+}
+
+@media only screen and (max-width: 767.98px) {
+  .button-360 {
+    width: 0.4rem;
+    height: 0.4rem;
+    bottom: 0.7rem;
     right: 0.2rem;
   }
 }
