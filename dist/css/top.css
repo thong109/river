@@ -1,9 +1,6 @@
 .section-top-keyvisual .keyvisual-title {
   margin: 0;
 }
-.section-top-keyvisual .group-bg {
-  background: url(../resources/images/top/keyvisual_background.jpg) center center/cover no-repeat;
-}
 .section-top-keyvisual .keyvisual-wrapper {
   position: absolute;
   top: 0;
@@ -31,6 +28,9 @@
   z-index: 2;
 }
 @media print, (min-width: 768px) {
+  .section-top-keyvisual .group-bg {
+    background: url(../resources/images/top/keyvisual_background.jpg) center center/cover no-repeat;
+  }
   .section-top-keyvisual .keyvisual-wrapper {
     padding: 24.2857142857vh 28.59375vw 0.5rem;
   }
@@ -48,22 +48,27 @@
 }
 @media only screen and (max-width: 767.98px) {
   .section-top-keyvisual {
-    height: 6.7rem !important;
+    height: 6.4rem !important;
+  }
+  .section-top-keyvisual .group-bg {
+    background: url(../resources/images/top/keyvisual_background_sp.jpg) center center/cover no-repeat;
   }
   .section-top-keyvisual .keyvisual-wrapper {
     padding: 1.2rem 0.2rem;
   }
   .section-top-keyvisual .keyvisual-title {
-    width: 1.4rem;
+    padding-top: 1.38rem;
+    width: 1.34rem;
+    margin: 0 auto;
   }
 }
 
-.section-top-icon .group-bg {
-  background: url(../resources/images/top/icon_bg_01.jpg) center center/cover no-repeat;
-}
 @media print, (min-width: 768px) {
   .section-top-icon {
     min-height: 9.8rem;
+  }
+  .section-top-icon .group-bg {
+    background: url(../resources/images/top/icon_bg_01.jpg) center center/cover no-repeat;
   }
   .section-top-icon .wrapper {
     max-width: 17.04rem;
@@ -94,16 +99,23 @@
 }
 @media only screen and (max-width: 767.98px) {
   .section-top-icon {
-    min-height: 6.8rem;
+    min-height: 5.45rem;
+  }
+  .section-top-icon .group-bg {
+    padding: 0.56rem 0 0.2rem;
+    background: url(../resources/images/top/icon_bg_01_sp.jpg) center center/cover no-repeat;
+  }
+  .section-top-icon .title-common-primary {
+    width: 2rem;
+    margin: 0 auto 1.37rem;
   }
   .section-top-icon .paragraph-common {
-    color: #006a51;
+    max-width: 2.61rem;
+    margin: 0 auto;
+    padding-top: 0.77rem;
   }
 }
 
-.section-top-overview .group-bg {
-  background: url(../resources/images/top/overview_bg_01.jpg) center center/cover no-repeat;
-}
 .section-top-overview .group-bg::before {
   position: absolute;
   content: "";
@@ -115,10 +127,6 @@
   pointer-events: none;
   transition: width 0.6s cubic-bezier(0.8, 0, 1, 1);
 }
-.section-top-overview .title-common-primary {
-  text-align: right;
-  font-family: "SVNGothamBook", sans-serif;
-}
 .section-top-overview .wrapper {
   position: relative;
   z-index: 1;
@@ -126,6 +134,9 @@
 @media print, (min-width: 768px) {
   .section-top-overview {
     min-height: 9.8rem;
+  }
+  .section-top-overview .group-bg {
+    background: url(../resources/images/top/overview_bg_01.jpg) center center/cover no-repeat;
   }
   .section-top-overview .group-bg::before {
     max-width: 11.65rem;
@@ -142,6 +153,7 @@
   .section-top-overview .title-common-primary {
     width: 3.95rem;
     padding: 0 0 0 1.6rem;
+    text-align: right;
   }
   .section-top-overview .title-common-primary .title-small {
     margin-right: -0.2rem;
@@ -158,20 +170,29 @@
 }
 @media only screen and (max-width: 767.98px) {
   .section-top-overview {
-    min-height: 6.8rem;
+    min-height: 7.2rem;
   }
-  .section-top-overview .overview-wrapper {
-    padding: 0.4rem 0;
+  .section-top-overview .group-bg {
+    background: url(../resources/images/top/overview_bg_01_sp.jpg) center center/cover no-repeat;
+    display: block;
+    padding: 0.38rem 0 0.14rem;
   }
   .section-top-overview .group-bg::before {
-    width: 100%;
+    display: none;
+  }
+  .section-top-overview .wrapper {
+    height: 100%;
+  }
+  .section-top-overview .overview-wrapper {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
   }
   .section-top-overview .title-common-primary {
-    width: 3.95rem;
-    padding: 0 1.6rem 0 0;
-  }
-  .section-top-overview .title-common-primary .title-small {
-    margin-right: -0.2rem;
+    width: 1.175rem;
+    text-align: center;
+    margin: 0 auto;
   }
 }
 
@@ -239,17 +260,21 @@
   }
 }
 @media only screen and (max-width: 767.98px) {
+  .list-top-overview {
+    max-width: 2.2rem;
+    margin: 0 auto;
+  }
   .list-top-overview .content-title {
-    margin-bottom: 0.08rem;
-    font-size: 0.16rem;
-    line-height: 1.375;
+    margin-bottom: 0.03rem;
+    font-size: 0.1rem;
+    line-height: 1.5;
   }
   .list-top-overview .content-detail,
   .list-top-overview .content-item,
   .list-top-overview .bigger,
   .list-top-overview .large {
-    font-size: 0.2rem;
-    line-height: 1.2;
+    font-size: 0.175rem;
+    line-height: 1.1666666667;
   }
   .list-top-overview .small {
     font-size: 0.14rem;
@@ -257,6 +282,25 @@
   }
   .list-top-overview .list-item {
     margin-bottom: 0.2rem;
+  }
+  .list-top-overview .list-item:last-child {
+    margin-bottom: 0;
+  }
+  .list-top-overview .item-wrapper.is-full .content-item {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 0.1rem;
+  }
+  .list-top-overview .item-wrapper.is-full .content-item + .content-item::before {
+    position: relative;
+    content: "";
+    border-radius: 50%;
+    display: inline-block;
+    width: 0.04rem;
+    height: 0.04rem;
+    background: rgba(255, 255, 255, 0.349);
+    pointer-events: none;
   }
 }
 
@@ -294,8 +338,6 @@
   position: relative;
   align-items: center;
   justify-content: center;
-  width: 0.2rem;
-  min-width: 0.4rem;
   height: auto;
 }
 .section-top-video .left-button svg,
@@ -317,10 +359,6 @@
 .section-top-video .right-button button {
   display: block;
   position: relative;
-  width: 0.15rem;
-  min-width: 0.3rem;
-  height: 0.15rem;
-  min-height: 0.3rem;
   margin: 0 0.03rem;
   background-color: transparent;
   cursor: pointer;
@@ -404,12 +442,10 @@
 }
 .section-top-video .video-time {
   color: #fff;
-  width: 1.2rem;
   flex: 0 0 auto;
 }
 .section-top-video .video-time .time-elapsed,
 .section-top-video .video-time .duration {
-  width: 0.42rem;
   display: inline-block;
 }
 .section-top-video .player-vid {
@@ -420,8 +456,6 @@
   left: 50%;
   align-items: center;
   justify-content: center;
-  width: 0.8rem;
-  height: 0.8rem;
   transform: translate(-50%, -50%);
   border-radius: 50%;
   color: #fff;
@@ -480,6 +514,55 @@
   transform: translate3d(0, 75%, 0);
   border-radius: 50%;
   background-color: #fff;
+}
+@media print, (min-width: 768px) {
+  .section-top-video .player-vid {
+    width: 0.8rem;
+    height: 0.8rem;
+  }
+  .section-top-video .right-button {
+    width: 0.2rem;
+    min-width: 0.4rem;
+  }
+  .section-top-video .left-button button,
+  .section-top-video .right-button button {
+    width: 0.15rem;
+    min-width: 0.3rem;
+    height: 0.15rem;
+    min-height: 0.3rem;
+  }
+  .section-top-video .video-time {
+    width: 1.2rem;
+  }
+  .section-top-video .video-time .time-elapsed,
+  .section-top-video .video-time .duration {
+    width: 0.42rem;
+  }
+}
+@media only screen and (max-width: 767.98px) {
+  .section-top-video .player-vid {
+    width: 0.3rem;
+    height: 0.3rem;
+  }
+  .section-top-video .right-button {
+    width: 0.15rem;
+    min-width: 0.2rem;
+  }
+  .section-top-video .left-button button,
+  .section-top-video .right-button button {
+    width: 0.15rem;
+    min-width: 0.1rem;
+    height: 0.15rem;
+    min-height: 0.1rem;
+  }
+  .section-top-video .video-time {
+    font-size: 0.08rem;
+    width: 0.8rem;
+  }
+  .section-top-video .video-time .time-elapsed,
+  .section-top-video .video-time .duration {
+    width: 0.3rem;
+  }
 }
 
 .section-top-location .location-thumbnail {
@@ -548,61 +631,23 @@
   .section-top-location .group-bg {
     flex-direction: column-reverse;
     position: relative;
-    background: url(../resources/images/top/location_bg_01.png) no-repeat top left;
+  }
+  .section-top-location .location-content {
+    background: url(../resources/images/top/location_bg_01_sp.png) no-repeat top left/cover;
   }
   .section-top-location .location-thumbnail {
     position: relative;
-  }
-  .section-top-location .map-controller {
-    position: relative;
-    z-index: 10;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #fff;
-    gap: 0.24rem;
-    padding: 0.32rem;
-  }
-  .section-top-location .map-controller svg {
-    width: 80%;
-    height: 80%;
-    position: relative;
-    margin: 10%;
-    z-index: 5;
-  }
-  .section-top-location .map-controller span {
-    position: relative;
-    display: block;
-    border-radius: 50%;
-    width: 0.4rem;
-    height: 0.4rem;
-  }
-  .section-top-location .map-controller span::before {
-    content: "";
-    position: absolute;
-    width: 120%;
-    height: 120%;
-    left: -10%;
-    top: -10%;
-    border-radius: 50%;
-    border: 2px solid transparent;
-    background: linear-gradient(135deg, #ab8768 0%, rgba(255, 255, 255, 0) 50%, #e1cab0 100%) border-box;
-    -webkit-mask-composite: xor;
-            mask-composite: exclude;
-    animation: Preloader 3s alternate infinite;
-  }
-  .section-top-location .map-controller span::after {
-    content: "";
-    position: absolute;
-    width: 90%;
-    height: 90%;
-    left: 5%;
-    top: 5%;
-    border-radius: 50%;
-    background: #ab8768;
+    margin-top: -1rem;
   }
   .section-top-location .content-wrapper {
-    padding: 0.6rem 0.2rem;
+    padding: 0.48rem 0.5rem 1.13rem;
+  }
+  .section-top-location .title-common-primary {
+    margin-bottom: 0.26rem;
+  }
+  .section-top-location .paragraph-common {
+    font-size: 0.095rem;
+    line-height: 1.5789473684;
   }
 }
 

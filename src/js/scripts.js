@@ -6,7 +6,7 @@
   const isDesktop = () => window.innerWidth >= 1024.98;
   const tabletBreak = 1280;
   const mobileBreak = 767.98;
-  const mobileXSBreak = 414;
+  const mobileXSBreak = 360;
   const Mask = document.querySelector('.mask'),
     WindBody = document.body,
     HTML = document.documentElement;
@@ -1069,7 +1069,14 @@
       Mask?.remove();
       setTimeout(() => {
         WindBody.classList.add('showed');
-        revealTitleFade();
+        if (!isTablet()) {
+          revealTitleFade();
+        } else {
+          // On mobile, just ensure visibility without the hide-then-show animation
+          document.querySelectorAll('.js-title-fade').forEach((el) => {
+            el.classList.add('is-show');
+          });
+        }
       }, 50);
     });
 

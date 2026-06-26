@@ -81,7 +81,7 @@ block content
               .keyvisual-wrapper
                 h1.keyvisual-title.hero-title.js-title.js-title-fade
                   img.image-common(src=imgPC+"keyvisual_title.svg" width="280" height="271" alt="Sống chất tuyệt đỉnh bên sông" loading="eager")
-                a.button-common-primary.hero-sub(href="#") Khám Phá
+                a.button-common-primary.hero-sub.md(href="#") Khám Phá
       section.panel.section-top-icon
         .group-central
           .inner
@@ -124,7 +124,7 @@ block content
                             p.content-title Shophouse
                             p.content-detail 20 <span class="small">Căn</span>
                       li.list-item
-                        .item-wrapper.is-full
+                        .item-wrapper
                           .item-content
                             p.content-title Số Tháp - Tầng
                             ul.content-list
@@ -201,14 +201,16 @@ block content
               .location-thumbnail
                 .thumbnail-wrapper
                   .thumbnail-inner.js-map
-                    img.object-common(src=imgPC+"location_img_01.jpg" alt="" width="1920" height="980" loading="eager")
-                .map-controller.sm
-                  span.button-plus
-                    svg(viewBox="0 0 80 80")
-                      path(fill="currentColor" d="M50.8,40.3c0,1.5-1.2,2.7-2.7,2.7h-5.5v5.5c0,1.5-1.2,2.7-2.7,2.7s-2.7-1.2-2.7-2.7V43h-5.5c-1.5,0-2.7-1.2-2.7-2.7s1.2-2.7,2.7-2.7h5.5v-5.5c0-1.5,1.2-2.7,2.7-2.7s2.7,1.2,2.7,2.7v5.5h5.5C49.6,37.6,50.8,38.8,50.8,40.3z").
-                  span.button-negative.is-disabled
-                    svg(viewBox="0 0 80 80")
-                      path(fill="currentColor" d="M48.1,43.4H31.7c-1.5,0-2.7-1.2-2.7-2.7l0,0c0-1.5,1.2-2.7,2.7-2.7h16.4c1.5,0,2.7,1.2,2.7,2.7l0,0 C50.8,42.2,49.6,43.4,48.1,43.4z").
+                    picture
+                      source(
+                        media="(max-width: 767.98px)"
+                        srcset=imgPC+"location_img_01_sp.jpg"
+                      )
+                      source(
+                        media="(min-width: 768px)"
+                        srcset=imgPC+"location_img_01.jpg"
+                      )
+                      img.object-common(src=imgPC+"location_img_01.jpg" alt="Map" width="1920" height="980" loading="eager")
               .location-content
                 .content-wrapper
                   h2.title-common-primary.hero-title.js-title
@@ -273,7 +275,7 @@ block content
                     span.title-large thiết kế thông minh
                   .paragraph-common.hero-sub.js-title
                     p The Emerald River Park được thiết kế phong cách hiện đại, sang trọng. Đồng thời các tháp được bố trí thông mình nhằm lấy gió tối đa vào từng căn hộ, View nhìn thoáng cho cuộc sống thoải mái.
-      section.panel.section-top-utilities
+      section.md.panel.section-top-utilities
         .group-central
           .inner
             .group-bg
@@ -319,7 +321,7 @@ block content
                   .button-prev
                   .swiper-pagination
                   .button-next
-      section.panel.section-top-monopoly
+      section.md.panel.section-top-monopoly
         .group-central
           .inner
             .group-bg
@@ -371,7 +373,7 @@ block content
                             img.object-common(src=imgPC+"monopoly_img_06.jpg" width="260" height="220" alt="Bảo chứng vững vàng" loading="lazy")
                           .item-info
                             p.item-title Bảo chứng<br>vững vàng
-      section.panel.section-top-partner.js-bg#section-partner
+      section.md.panel.section-top-partner.js-bg#section-partner
         .group-central
           .inner
             .central-bg
@@ -479,7 +481,7 @@ block content
                         .item-image
                           img(src=imgPC+"partner_img_15.png" width="" height="" loading="eager" alt="")
                     .swiper-pagination
-      section.panel.section-top-news.js-bg#section-news
+      section.md.panel.section-top-news.js-bg#section-news
         .group-central
           .inner
             .central-bg
@@ -517,7 +519,7 @@ block content
                             span.date-time .05.2026
                 .news-controller.hero-sub.js-title
                   a(href="#").button-common-primary.is-right.is-white XEM TẤT CẢ
-      section.panel.footer-common
+      section.md.panel.footer-common
         .group-central
           .inner
             .central-bg

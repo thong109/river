@@ -101,6 +101,13 @@ html.is-dark-bg-02 {
   .header-lang {
     color: #fff;
   }
+
+  @include mobile {
+    .header-logo {
+      opacity: 0;
+      visibility: hidden;
+    }
+  }
 }
 
 .header-common {
@@ -316,7 +323,7 @@ html.is-dark-bg-02 {
   }
 
   @include mobile {
-    padding: .22rem 0;
+    padding: .14rem 0;
 
     .header-inner {
       flex-direction: row-reverse;
@@ -344,20 +351,26 @@ html.is-dark-bg-02 {
     }
 
     .header-left {
-      gap: .1rem;
+      gap: .14rem;
+      flex-direction: row-reverse;
+      margin: -0.16rem -0.05rem 0 0;
     }
 
     .header-lang {
-      font-size: .16rem;
+      font-size: .08rem;
       line-height: 1.2;
-      gap: .12rem;
+      gap: .06rem;
+
+      svg {
+        width: .07rem;
+        height: .04rem;
+      }
     }
 
     .header-logo {
       opacity: 1;
       visibility: visible;
-      width: 1.33rem;
-      height: 0.76rem;
+      width: .77rem;
 
       img {
         width: 100%;
@@ -486,19 +499,24 @@ html.is-dark-bg-02 {
     font-size: 0.14rem;
     line-height: 1.2;
     padding: 0.05rem;
-    width: 1.2rem;
-    min-height: 0.4rem;
+    width: .4rem;
+    min-height: 0.28rem;
     gap: 0.1rem;
 
     .menu-icon {
-      margin-top: 0.04rem;
-      width: 0.4rem;
+      margin-top: 0.01rem;
+      width: 0.225rem;
     }
 
     .hamburger-menu.off {
       .menu-icon {
-        margin-top: 0.02rem;
-        width: 0.2rem;
+        width: 0.1rem;
+      }
+    }
+
+    .hamburger-menu {
+      &>span {
+        display: none;
       }
     }
   }
@@ -542,20 +560,24 @@ html.is-dark-bg-02 {
     height: 100%;
     overflow: hidden auto;
     @include scroll-hidden;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
     z-index: 6;
     position: relative;
-    background: url(../resources/images/common/menu_bg.jpg) center center/cover no-repeat;
     transition: transform .35s ease;
+  }
+
+  .heading-logo {
+    margin: 0 auto;
   }
 
   @include desktop {
     max-width: 100%;
 
     .navigation-wrapper {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
       padding: 0.5rem;
+      background: url(../resources/images/common/menu_bg.jpg) center center/cover no-repeat;
     }
 
     .menu-heading {
@@ -564,7 +586,6 @@ html.is-dark-bg-02 {
 
     .heading-logo {
       width: 1.98rem;
-      margin: 0 auto;
     }
 
     .button-close {
@@ -583,15 +604,13 @@ html.is-dark-bg-02 {
     max-width: 100%;
 
     .navigation-wrapper {
-      padding: 0.8rem 0.25rem 1rem;
-    }
-
-    .menu-heading {
-      display: none;
+      padding: 0.72rem 0.25rem 1rem;
+      background: url(../resources/images/common/menu_bg_sp.jpg) center center/cover no-repeat;
     }
 
     .heading-logo {
-      width: 1.98rem;
+      width: .95rem;
+      margin-bottom: .46rem;
     }
 
     .button-close {
@@ -612,7 +631,6 @@ html.is-dark-bg-02 {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 0.2rem;
 
   .item-wrapper {
     display: block;
@@ -628,10 +646,21 @@ html.is-dark-bg-02 {
 
   @include desktop {
     margin-top: -0.7rem;
+    gap: 0.2rem;
 
     .item-wrapper {
       width: 0.6rem;
       height: 0.6rem;
+    }
+  }
+
+  @include mobile {
+    gap: 0.1rem;
+    margin-top: .6rem;
+
+    .item-wrapper {
+      width: 0.3rem;
+      height: 0.3rem;
     }
   }
 }
@@ -712,17 +741,15 @@ html.is-dark-bg-02 {
   }
 
   @include mobile {
-    max-width: 5.4rem;
     margin-bottom: 0.85rem;
 
     .menu-item {
       text-align: center;
-      margin-bottom: 0.3rem;
     }
 
     .item-link {
-      font-size: 0.24rem;
-      line-height: calc(40 / 24);
+      font-size: 0.18rem;
+      line-height: calc(40 / 18);
     }
   }
 }

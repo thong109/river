@@ -16,7 +16,11 @@
   }
 
   @include mobile {
-    font-size: 0.16rem;
-    line-height: calc(24 / 16);
+    font-size: 0.09rem;
+    line-height: calc(13 / 9);
+
+    p {
+      margin-bottom: .13rem;
+    }
   }
 }
