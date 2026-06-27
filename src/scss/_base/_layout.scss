@@ -26,6 +26,14 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: BeautiqueDisplay;
+  font-style: normal;
+  font-weight: 500;
+  src: url("../resources/fonts/BeautiqueDisplay-Medium.otf") format("opentype");
+  font-display: swap;
+}
+
 html {
   line-height: 1;
   @include scroll-hidden;

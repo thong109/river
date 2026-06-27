@@ -247,6 +247,13 @@ input[type=search] {
   src: url("../resources/fonts/SVN-Gotham-Book.otf") format("opentype");
   font-display: swap;
 }
+@font-face {
+  font-family: BeautiqueDisplay;
+  font-style: normal;
+  font-weight: 500;
+  src: url("../resources/fonts/BeautiqueDisplay-Medium.otf") format("opentype");
+  font-display: swap;
+}
 html {
   line-height: 1;
 }
@@ -1726,7 +1733,7 @@ html.is-dark-bg-02 .header-cta {
 .button-common-primary.is-right::after {
   transform: rotate(-90deg);
   animation: none;
-  opacity: 1;
+  opacity: 0.302;
   transition: transform 0.35s ease;
 }
 .button-common-primary.is-right:hover::after {
@@ -1741,6 +1748,7 @@ html.is-dark-bg-02 .header-cta {
   display: block;
   background: url(../resources/images/common/decor_icon_01.svg) center center/contain no-repeat;
   filter: brightness(0) invert(1);
+  opacity: 0.302;
 }
 .button-common-primary::after {
   position: absolute;
@@ -1769,18 +1777,17 @@ html.is-dark-bg-02 .header-cta {
 }
 @media only screen and (max-width: 767.98px) {
   .button-common-primary {
-    margin-bottom: 0.2rem;
-    padding-bottom: 0.4rem;
-    font-size: 0.17rem;
+    padding-bottom: 0.08rem;
+    font-size: 0.08rem;
   }
   .button-common-primary::before {
-    width: 0.52rem;
-    height: 0.13rem;
+    width: 0.26rem;
+    height: 0.055rem;
   }
   .button-common-primary::after {
-    margin: 0.06rem -0.26rem 0 0;
-    width: 0.14rem;
-    height: 0.14rem;
+    margin: 0.01rem -0.16rem 0 0;
+    width: 0.085rem;
+    height: 0.07rem;
   }
 }
 

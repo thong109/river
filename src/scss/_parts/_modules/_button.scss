@@ -17,7 +17,7 @@
     &::after {
       transform: rotate(-90deg);
       animation: none;
-      opacity: 1;
+      opacity: .302;
       transition: transform .35s ease;
     }
 
@@ -37,6 +37,7 @@
     display: block;
     background: url(../resources/images/common/decor_icon_01.svg) center center / contain no-repeat;
     filter: brightness(0) invert(1);
+    opacity: 0.302;
   }
 
   &::after {
@@ -67,19 +68,18 @@
   }
 
   @include mobile {
-    margin-bottom: 0.2rem;
-    padding-bottom: 0.4rem;
-    font-size: 0.17rem;
+    padding-bottom: .08rem;
+    font-size: 0.08rem;
 
     &::before {
-      width: 0.52rem;
-      height: 0.13rem;
+      width: 0.26rem;
+      height: 0.055rem;
     }
 
     &::after {
-      margin: 0.06rem -0.26rem 0 0;
-      width: 0.14rem;
-      height: 0.14rem;
+      margin: .01rem -0.16rem 0 0;
+      width: 0.085rem;
+      height: 0.07rem;
     }
   }
 }

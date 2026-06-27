@@ -544,24 +544,31 @@
     width: 0.3rem;
     height: 0.3rem;
   }
+  .section-top-video .video-progress {
+    width: 40%;
+    flex: 0 0 auto;
+  }
+  .section-top-video .left-button {
+    gap: 0.05rem;
+  }
   .section-top-video .right-button {
     width: 0.15rem;
     min-width: 0.2rem;
   }
   .section-top-video .left-button button,
   .section-top-video .right-button button {
-    width: 0.15rem;
+    width: 0.1rem;
     min-width: 0.1rem;
-    height: 0.15rem;
+    height: 0.1rem;
     min-height: 0.1rem;
   }
   .section-top-video .video-time {
     font-size: 0.08rem;
-    width: 0.8rem;
+    width: 0.7rem;
   }
   .section-top-video .video-time .time-elapsed,
   .section-top-video .video-time .duration {
-    width: 0.3rem;
+    width: 0.25rem;
   }
 }
 
@@ -584,12 +591,7 @@
 }
 .section-top-location .js-map {
   transform-origin: center center;
-  touch-action: none;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none;
   will-change: transform;
-  cursor: default;
 }
 .section-top-location .thumbnail-wrapper {
   overflow: hidden;
@@ -1080,7 +1082,6 @@
   pointer-events: none;
   height: 100%;
   z-index: 2;
-  background: url(../resources/images/top/news_decor_01.png) center center/cover no-repeat;
 }
 .section-top-news .title-common-primary .title-large {
   color: #006a51;
@@ -1100,6 +1101,9 @@
   .section-top-news .central-bg::before {
     height: 3.88rem;
   }
+  .section-top-news .central-bg::after {
+    background: url(../resources/images/top/news_decor_01.png) center center/cover no-repeat;
+  }
   .section-top-news .wrapper {
     max-width: 14.36rem;
   }
@@ -1112,17 +1116,19 @@
 }
 @media only screen and (max-width: 767.98px) {
   .section-top-news .central-bg {
-    padding: 0.4rem 0;
+    padding: 0.3rem 0;
   }
   .section-top-news .central-bg::before {
-    height: 3.88rem;
+    height: 1.78rem;
+  }
+  .section-top-news .central-bg::after {
+    background: url(../resources/images/top/news_decor_01_sp.png) center center/cover no-repeat;
   }
   .section-top-news .title-common-primary {
-    font-size: 0.225rem;
-    margin-bottom: 0.33rem;
+    margin-bottom: 0.28rem;
   }
   .section-top-news .news-controller {
-    margin-top: 0.4rem;
+    margin-top: 0.28rem;
   }
 }
 
@@ -1139,7 +1145,6 @@
   display: block;
   background: #f9fbfa;
   overflow: hidden;
-  border-radius: 0.1rem;
 }
 .list-top-news .item-wrapper:hover img {
   transform: scale(1.05);
@@ -1193,9 +1198,15 @@
     flex-wrap: wrap;
     margin: 0 -0.35rem;
   }
+  .list-top-news .swiper {
+    margin-left: 0.7rem;
+  }
   .list-top-news .list-item {
     padding: 0 0.35rem;
     width: 33.3333333333%;
+  }
+  .list-top-news .item-wrapper {
+    border-radius: 0.1rem;
   }
   .list-top-news .item-image {
     padding-top: 66.6666666667%;
@@ -1230,20 +1241,26 @@
   }
 }
 @media only screen and (max-width: 767.98px) {
+  .list-top-news {
+    padding: 0 0.05rem;
+  }
+  .list-top-news .swiper {
+    overflow: visible;
+  }
   .list-top-news .list-item {
-    margin-bottom: 0.2rem;
+    width: 2.16rem;
   }
   .list-top-news .list-item:last-child {
     margin-bottom: 0;
   }
   .list-top-news .item-wrapper {
-    max-width: 2.16rem;
+    border-radius: 0.05rem;
   }
   .list-top-news .item-image {
     padding-top: 66.6666666667%;
   }
   .list-top-news .item-content {
-    padding: 0.19rem 0.15rem 0.23rem;
+    padding: 0.15rem;
   }
   .list-top-news .item-content::before {
     width: 0.28rem;
@@ -1251,17 +1268,60 @@
     margin: 0 0.15rem 0.15rem 0;
   }
   .list-top-news .content-title {
-    margin-bottom: 0.44rem;
+    margin-bottom: 0.35rem;
     font-size: 0.1rem;
-    line-height: 1.2;
+    line-height: 1.5;
   }
   .list-top-news .date-day {
     font-size: 0.225rem;
   }
   .list-top-news .date-time {
     font-size: 0.08rem;
-    margin-left: -0.06rem;
-    line-height: 1.2;
+    line-height: 2.25;
+  }
+  .list-top-news .swiper-wrapper {
+    display: flex;
+    flex-wrap: nowrap;
+  }
+  .list-top-news .swiper-slide {
+    flex-shrink: 0;
+    margin-bottom: 0;
+  }
+  .list-top-news .swiper-slide .item-wrapper {
+    max-width: none;
+  }
+  .list-top-news .swiper-pagination {
+    position: unset;
+    margin-top: 0.14rem;
+  }
+  .list-top-news .swiper-pagination-bullet {
+    width: 0.075rem;
+    height: 0.075rem;
+    background-color: #acbbb8;
+    opacity: 0.2;
+    border: 1px solid transparent;
+    position: relative;
+  }
+  .list-top-news .swiper-pagination-bullet::before {
+    position: absolute;
+    content: "";
+    border: 1px solid #c8c8c8;
+    border-radius: 50%;
+    width: calc(100% + 0.07rem);
+    height: calc(100% + 0.07rem);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  .list-top-news .swiper-pagination-bullet-active {
+    background-color: #fff;
+    opacity: 0.6;
+    border: 1px solid #c8c8c8;
+  }
+  .list-top-news .swiper-pagination-bullet-active::before {
+    opacity: 1;
   }
 }
 
@@ -1516,8 +1576,12 @@
 .section-top-architecture .architecture-wrapper text {
   fill: #fff;
   font-weight: 500;
+  font-family: "BeautiqueDisplay", sans-serif;
+  text-transform: uppercase;
+  font-size: 0.2rem;
+  line-height: 1.5;
 }
-.section-top-architecture .architecture-wrapper rect {
+.section-top-architecture .architecture-wrapper .svg-line {
   clip-path: inset(0 0 100% 0);
   animation: lineReveal 1s ease infinite;
   fill: rgba(255, 255, 255, 0.5);
@@ -1531,13 +1595,12 @@
 .section-top-architecture .marker-dot {
   fill: rgb(127, 0, 0);
 }
+.section-top-architecture .svg-box {
+  fill: #006a51;
+}
 @media print, (min-width: 768px) {
   .section-top-architecture {
     min-height: 9.8rem;
-  }
-  .section-top-architecture .architecture-wrapper text {
-    font-size: 0.2rem;
-    line-height: 1.2;
   }
   .section-top-architecture .architecture-content {
     max-width: 17.7rem;
@@ -1559,18 +1622,14 @@
   }
 }
 @media only screen and (max-width: 767.98px) {
+  .section-top-architecture {
+    min-height: 5.92rem;
+  }
   .section-top-architecture .group-bg {
-    position: relative;
-    display: block;
-  }
-  .section-top-architecture .architecture-wrapper {
-    position: relative;
-    height: 3.5rem;
-  }
-  .section-top-architecture .architecture-wrapper > img {
-    position: relative;
+    justify-content: flex-end;
+    height: 5.92rem;
   }
   .section-top-architecture .architecture-content {
-    padding: 0.4rem 0.2rem;
+    padding: 0.36rem 0.5rem;
   }
 }

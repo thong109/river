@@ -1688,6 +1688,51 @@
     });
   };
 
+  const commonSliderMobile = () => {
+    const containers = document.querySelectorAll(".js-slider-mobile");
+    if (!containers.length) return;
+
+    containers.forEach((container) => {
+      const sliderEl = container.querySelector(".swiper");
+      const attr = sliderEl.getAttribute("data-slider-delay") || "4000";
+      let swiper = null;
+
+      const init = () => {
+        const isMobile = window.matchMedia("(max-width: 767.98px)").matches;
+
+        // MOBILE: init swiper
+        if (isMobile) {
+          if (swiper) return;
+
+          swiper = new Swiper(sliderEl, {
+            slidesPerView: "auto",
+            spaceBetween: 20,
+            speed: 600,
+            loop: true,
+            autoplay: {
+              delay: attr,
+              disableOnInteraction: false,
+            },
+            pagination: {
+              el: container.querySelector('.swiper-pagination'),
+              clickable: true,
+            },
+          });
+          return;
+        }
+
+        // PC: destroy swiper
+        if (swiper) {
+          swiper.destroy(true, true);
+          swiper = null;
+        }
+      };
+
+      init();
+      window.addEventListener("resize", init);
+    });
+  };
+
   window.WebFontConfig = {
     custom: {
       families: [
@@ -1725,4 +1770,5 @@
   initMapZoom();
   utilitiesSlider();
   buttonTop();
+  commonSliderMobile();
 })();
