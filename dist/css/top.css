@@ -190,7 +190,7 @@
     justify-content: space-between;
   }
   .section-top-overview .title-common-primary {
-    width: 1.175rem;
+    width: 1.17rem;
     text-align: center;
     margin: 0 auto;
   }
@@ -708,11 +708,15 @@
     justify-content: flex-start;
   }
   .section-top-utilities .utilities-detail {
-    font-size: 0.18rem;
+    font-size: 0.09rem;
     line-height: 1.2;
   }
   .section-top-utilities .title-common-primary {
-    padding: 0 0.3rem;
+    padding: 0 0.48rem 0 0.77rem;
+  }
+  .section-top-utilities .slide-controller {
+    pointer-events: none;
+    display: none !important;
   }
 }
 
@@ -803,7 +807,7 @@
 }
 @media only screen and (max-width: 767.98px) {
   .list-utilities-slider .slide-content {
-    padding: 0 0.2rem 0.7rem;
+    padding: 0 0.25rem 0.2rem;
   }
   .list-utilities-slider .swiper-pagination-current {
     font-size: 0.22rem;
@@ -866,13 +870,13 @@
 }
 @media only screen and (max-width: 767.98px) {
   .block-top-utilities {
-    width: 1rem;
-    height: 1rem;
+    width: 0.68rem;
+    height: 0.68rem;
     padding: 0.1rem;
   }
   .block-top-utilities .block-title {
-    font-size: 0.14rem;
-    line-height: 1.125;
+    font-size: 0.08rem;
+    line-height: 1.2;
   }
 }
 
@@ -939,7 +943,16 @@
     margin-bottom: 0.2rem;
   }
   .list-top-partner .item-image {
-    height: 0.96rem;
+    height: 0.48rem;
+  }
+  .list-top-partner .title-common-secondary {
+    font-size: 0.12rem;
+    line-height: 1.2;
+  }
+  .list-top-partner .list-wrapper {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
   }
 }
 
@@ -1104,6 +1117,10 @@
   .section-top-news .central-bg::before {
     height: 3.88rem;
   }
+  .section-top-news .title-common-primary {
+    font-size: 0.225rem;
+    margin-bottom: 0.33rem;
+  }
   .section-top-news .news-controller {
     margin-top: 0.4rem;
   }
@@ -1219,28 +1236,32 @@
   .list-top-news .list-item:last-child {
     margin-bottom: 0;
   }
+  .list-top-news .item-wrapper {
+    max-width: 2.16rem;
+  }
   .list-top-news .item-image {
     padding-top: 66.6666666667%;
   }
   .list-top-news .item-content {
-    padding: 0.3rem;
+    padding: 0.19rem 0.15rem 0.23rem;
   }
   .list-top-news .item-content::before {
-    width: 0.56rem;
-    height: 0.56rem;
-    margin: 0 0.3rem 0.33rem 0;
+    width: 0.28rem;
+    height: 0.28rem;
+    margin: 0 0.15rem 0.15rem 0;
   }
   .list-top-news .content-title {
-    margin-bottom: 0.2rem;
-    font-size: 0.2rem;
-    line-height: 1.5;
+    margin-bottom: 0.44rem;
+    font-size: 0.1rem;
+    line-height: 1.2;
   }
   .list-top-news .date-day {
-    font-size: 0.3rem;
+    font-size: 0.225rem;
   }
   .list-top-news .date-time {
-    font-size: 0.16rem;
-    line-height: 2.25;
+    font-size: 0.08rem;
+    margin-left: -0.06rem;
+    line-height: 1.2;
   }
 }
 
@@ -1428,6 +1449,7 @@
   .section-top-monopoly .group-bg {
     position: relative;
     padding: 0.6rem 0;
+    background-image: url(../resources/images/top/monopoly_bg_01_sp.jpg);
   }
   .section-top-monopoly .list-item {
     width: 50%;
@@ -1438,18 +1460,40 @@
     line-height: 1.6;
   }
   .section-top-monopoly .title-common-primary {
-    width: 1rem;
+    width: 0.69rem;
     height: auto;
   }
   .section-top-monopoly .heading-sub {
-    margin-top: -0.22rem;
+    margin-top: -0.1rem;
+    font-size: 0.23rem;
+    margin-bottom: 0.47rem;
   }
   .section-top-monopoly .monopoly-decoration {
-    width: 0.4rem;
-    margin-bottom: 0.3rem;
+    width: 0.28rem;
+    margin-bottom: 0.2rem;
   }
   .section-top-monopoly .monopoly-heading {
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.4rem;
+  }
+  .section-top-monopoly .monopoly-logo {
+    width: 1.15rem;
+  }
+  .section-top-monopoly .monopoly-list .list-wrapper {
+    gap: 0 0.05rem;
+    justify-content: center;
+  }
+  .section-top-monopoly .monopoly-list .item-wrapper {
+    max-width: 1.4rem;
+  }
+  .section-top-monopoly .monopoly-list .list-item {
+    max-width: 1.4rem;
+    margin-bottom: 0.13rem;
+  }
+  .section-top-monopoly .monopoly-list .item-image {
+    width: 1.3rem;
+  }
+  .section-top-monopoly .monopoly-list .item-title {
+    font-size: 0.1rem;
   }
 }
 
