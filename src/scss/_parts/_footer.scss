@@ -772,6 +772,7 @@
     padding: .05rem;
 
     .button-wrapper {
+      width: 0.28rem;
       height: .28rem;
       flex-shrink: 0;
 
@@ -783,22 +784,24 @@
       }
     }
 
-    .button-chat {
-      width: 0.28rem;
-    }
-
     .button-360 {
-      width: 0.32rem;
+      .button-wrapper {
+        width: 0.32rem;
+      }
     }
 
     .button-cta {
       border: 1px solid #ffffff;
       border-radius: 9999px;
       padding: 0 .1rem;
+      width: .96rem;
+
+      .button-wrapper {
+        width: 100%;
+      }
     }
 
     .button-phone {
-      width: .28rem;
       border: 1px solid #ffffff;
       border-radius: 50%;
     }

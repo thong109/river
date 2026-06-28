@@ -1709,6 +1709,7 @@ html.is-dark-bg-02 .header-cta {
     padding: 0.05rem;
   }
   .button-footer-common .button-wrapper {
+    width: 0.28rem;
     height: 0.28rem;
     flex-shrink: 0;
   }
@@ -1718,19 +1719,19 @@ html.is-dark-bg-02 .header-cta {
     font-size: 0.09rem;
     text-transform: uppercase;
   }
-  .button-footer-common .button-chat {
-    width: 0.28rem;
-  }
-  .button-footer-common .button-360 {
+  .button-footer-common .button-360 .button-wrapper {
     width: 0.32rem;
   }
   .button-footer-common .button-cta {
     border: 1px solid #ffffff;
     border-radius: 9999px;
     padding: 0 0.1rem;
+    width: 0.96rem;
+  }
+  .button-footer-common .button-cta .button-wrapper {
+    width: 100%;
   }
   .button-footer-common .button-phone {
-    width: 0.28rem;
     border: 1px solid #ffffff;
     border-radius: 50%;
   }

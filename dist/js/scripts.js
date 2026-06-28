@@ -1461,10 +1461,10 @@
         slidesPerView: groupNum,
         slidesPerGroup: groupNum,
 
-        // autoplay: {
-        //   delay: 3000,
-        //   disableOnInteraction: false,
-        // },
+        autoplay: {
+          delay: 3000,
+          disableOnInteraction: false,
+        },
 
         pagination: {
           el: slider.querySelector('.swiper-pagination'),
