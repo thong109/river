@@ -1457,30 +1457,44 @@
       new Swiper(slider, {
         loop: true,
         speed: 1500,
+
+        slidesPerView: groupNum,
         slidesPerGroup: groupNum,
-        slidesPerView: 'auto',
-        autoplay: {
-          delay: 3000,
-          disableOnInteraction: false,
-        },
+
+        // autoplay: {
+        //   delay: 3000,
+        //   disableOnInteraction: false,
+        // },
+
         pagination: {
           el: slider.querySelector('.swiper-pagination'),
           clickable: true,
         },
+
         breakpoints: {
           0: {
-            slidesPerGroup: 2,
-            autoplay: {
-              delay: 0,
-              disableOnInteraction: false,
+            slidesPerView: Math.ceil(groupNum / 2),
+            slidesPerGroup: Math.ceil(groupNum / 2),
+            grid: {
+              rows: 2,
+              fill: 'row',
             },
-            speed: 3000,
           },
+
           768: {
+            slidesPerView: 3,
             slidesPerGroup: 3,
+            grid: {
+              rows: 1,
+            },
           },
+
           1025: {
+            slidesPerView: groupNum,
             slidesPerGroup: groupNum,
+            grid: {
+              rows: 1,
+            },
           },
         },
       });

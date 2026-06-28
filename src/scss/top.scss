@@ -1048,10 +1048,6 @@
     font-weight: 700;
   }
 
-  .central-bg {
-    background: url(../resources/images/top/partner_img_01.jpg) center center / cover no-repeat;
-  }
-
   @include desktop {
     .wrapper {
       max-width: 17.4rem;
@@ -1059,6 +1055,7 @@
 
     .central-bg {
       padding: .8rem 0;
+      background: url(../resources/images/top/partner_img_01.jpg) center center / cover no-repeat;
     }
   }
 
@@ -1066,11 +1063,23 @@
     margin-bottom: -0.02rem;
 
     .central-bg {
-      padding: 0.4rem 0;
+      padding: 0.32rem 0;
+      background: url(../resources/images/top/partner_img_01_sp.jpg) center center / cover no-repeat;
+    }
+
+    .title-common-primary {
+      margin-bottom: .37rem;
+
+      .title-large {
+        line-height: 1.35;
+      }
     }
 
     .title-common-secondary {
       text-align: center;
+      margin-bottom: .2rem;
+      font-size: .12rem;
+      line-height: calc(60 / 24);
     }
   }
 }
@@ -1105,6 +1114,8 @@
   }
 
   @include mobile {
+    margin-bottom: .12rem;
+
     .list-item {
       margin-bottom: .2rem;
     }
@@ -1146,8 +1157,6 @@
   }
 
   .swiper-pagination-bullet {
-    width: 0.16rem;
-    height: 0.16rem;
     background-color: #acbbb8;
     opacity: 1;
     margin: 0 0.09rem !important;
@@ -1158,8 +1167,6 @@
       content: "";
       border-radius: 50%;
       border: 1px solid #c8c8c8;
-      width: 0.24rem;
-      height: 0.24rem;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
@@ -1207,6 +1214,16 @@
     .swiper-pagination {
       margin-top: 0.36rem;
     }
+
+    .swiper-pagination-bullet {
+      width: 0.16rem;
+      height: 0.16rem;
+
+      &::before {
+        width: 0.24rem;
+        height: 0.24rem;
+      }
+    }
   }
 
   @include tablet {
@@ -1222,10 +1239,8 @@
   }
 
   @include mobile {
-    max-width: 15.4rem;
-
     &+& {
-      margin-top: 0.32rem;
+      margin-top: 0.2rem;
       max-width: 100%;
     }
 
@@ -1233,16 +1248,33 @@
       padding-top: 0.04rem;
     }
 
-    .swiper-wrapper {
-      transition-timing-function: linear !important;
-    }
-
     .swiper-slide {
-      padding: 0 0.2rem;
+      padding: 0 0.1rem;
+      margin-bottom: .2rem;
     }
 
     .swiper-pagination {
-      display: none;
+      margin-top: -.1rem;
+    }
+
+    .swiper-pagination-bullet {
+      width: 0.075rem;
+      height: 0.075rem;
+      margin: 0 .04rem !important;
+
+      &::before {
+        width: 0.125rem;
+        height: 0.125rem;
+      }
+    }
+
+    .item-image {
+      text-align: center;
+
+      img {
+        object-fit: contain;
+        max-height: .3rem;
+      }
     }
   }
 }
@@ -1641,8 +1673,8 @@
         pointer-events: none;
         inset: 0;
         background: linear-gradient(to bottom,
-            rgba(1, 69, 55, 0) 55%,
-            rgba(1, 69, 55, 1) 87%);
+            rgba($color: #005D48, $alpha: 0) 55%,
+            rgba($color: #005D48, $alpha: 1) 74%);
       }
     }
 
@@ -1667,8 +1699,8 @@
 
   .heading-sub {
     color: #fff;
-    font-weight: 500;
-    font-family: $font-montser;
+    font-weight: 700;
+    font-family: $font-beautique;
     line-height: 1;
   }
 
@@ -1794,11 +1826,11 @@
   }
 
   @include mobile {
-    min-height: 6.8rem;
+    min-height: 7.1rem;
 
     .group-bg {
       position: relative;
-      padding: .6rem 0;
+      padding: .8rem 0 .24rem;
       background-image: url(../resources/images/top/monopoly_bg_01_sp.jpg);
     }
 
@@ -1813,19 +1845,19 @@
     }
 
     .title-common-primary {
-      width: .69rem;
+      width: .685rem;
       height: auto;
     }
 
     .heading-sub {
-      margin-top: -0.1rem;
-      font-size: .23rem;
-      margin-bottom: 0.47rem;
+      margin: -0.25rem 0 .12rem;
+      font-size: .225rem;
+      line-height: calc(75 / 45);
     }
 
     .monopoly-decoration {
-      width: 0.28rem;
-      margin-bottom: 0.2rem;
+      width: .28rem;
+      margin-bottom: 0.22rem;
     }
 
     .monopoly-heading {
@@ -1833,7 +1865,7 @@
     }
 
     .monopoly-logo {
-      width: 1.15rem;
+      width: 1.14rem;
     }
 
     .monopoly-list {
