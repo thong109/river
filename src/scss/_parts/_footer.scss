@@ -553,6 +553,7 @@
     margin-top: 0.42rem;
     align-items: center;
     justify-content: space-between;
+    width: 100%;
   }
 
   .footer-navigation small {
@@ -657,7 +658,7 @@
     left: 0.2rem;
 
     img {
-      max-width: .17rem;
+      max-width: .14rem;
     }
   }
 }
@@ -672,6 +673,7 @@
   @include desktop {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
     margin-top: 0.5rem;
 
     .info-list {

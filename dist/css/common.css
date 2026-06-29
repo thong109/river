@@ -1515,6 +1515,7 @@ html.is-dark-bg-02 .header-cta {
     margin-top: 0.42rem;
     align-items: center;
     justify-content: space-between;
+    width: 100%;
   }
   .footer-navigation small {
     font-size: 0.16rem;
@@ -1603,7 +1604,7 @@ html.is-dark-bg-02 .header-cta {
     left: 0.2rem;
   }
   .button-top img {
-    max-width: 0.17rem;
+    max-width: 0.14rem;
   }
 }
 .footer-info .info-list {
@@ -1617,6 +1618,7 @@ html.is-dark-bg-02 .header-cta {
   .footer-info {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
     margin-top: 0.5rem;
   }
   .footer-info .info-list {

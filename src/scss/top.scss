@@ -310,6 +310,32 @@
     .list-item {
       margin-bottom: .52rem;
     }
+
+    .content-list {
+      gap: 0.1rem;
+    }
+
+    .item-wrapper.is-full {
+      .content-item {
+        position: relative;
+        display: flex;
+        align-items: center;
+        gap: .3rem;
+
+        &+.content-item {
+          &::before {
+            position: relative;
+            content: "";
+            border-radius: 50%;
+            display: inline-block;
+            width: .08rem;
+            height: .08rem;
+            background: rgba(255, 255, 255, .349);
+            pointer-events: none;
+          }
+        }
+      }
+    }
   }
 
   @include mobile {
@@ -865,6 +891,7 @@
     flex-direction: column;
     justify-content: flex-end;
     position: relative;
+    overflow: hidden;
   }
 
   .slide-img {
@@ -922,12 +949,22 @@
     display: flex;
     align-items: center;
     gap: .1rem;
-    margin-bottom: .5rem;
+    margin-bottom: .8rem;
   }
 
   .swiper-pagination {
     color: #fff;
     line-height: 1.2;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    position: relative;
+    top: -0.04rem;
+  }
+
+  .swiper-pagination-current {
+    position: relative;
+    top: 0.02rem;
   }
 
   .swiper-pagination-total {
@@ -936,7 +973,7 @@
 
   @include desktop {
     .swiper-slide {
-      padding: .3rem 0;
+      padding: .3rem 0 0.7rem;
     }
 
     .slide-content {
@@ -947,6 +984,11 @@
 
     .swiper-pagination-current {
       font-size: .25rem;
+      width: 0.3rem;
+    }
+
+    .swiper-pagination-total {
+      width: 0.3rem;
     }
   }
 
@@ -1741,7 +1783,7 @@
         position: absolute;
         top: 50%;
         right: 0;
-        left: 1.7rem;
+        left: 2.4rem;
         height: 1px;
         border-bottom: 1px solid #fff;
         opacity: 0.2;
@@ -1809,9 +1851,7 @@
 
       .item-image {
         &::after {
-          background: linear-gradient(to top,
-              rgba(1, 69, 55, 0) 55%,
-              rgba(1, 69, 55, 1) 87%);
+          background: linear-gradient(to top, rgba(0, 93, 72, 0) 50%, #005d48 90%);
         }
       }
     }
@@ -1922,8 +1962,6 @@
       font-weight: 500;
       font-family: $font-beautique;
       text-transform: uppercase;
-      font-size: .2rem;
-      line-height: calc(30 / 20);
     }
 
     .svg-line {
@@ -1957,6 +1995,13 @@
       margin: 0 auto;
     }
 
+    .architecture-wrapper {
+      text {
+        font-size: .2rem;
+        line-height: calc(30 / 20);
+      }
+    }
+
     .content-wrapper {
       max-width: 5.2rem;
       margin-left: auto;
@@ -1984,6 +2029,13 @@
 
     .architecture-content {
       padding: .36rem .5rem;
+    }
+
+    .architecture-wrapper {
+      text {
+        font-size: .2rem;
+        line-height: calc(30 / 20);
+      }
     }
   }
 }
