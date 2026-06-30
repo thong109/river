@@ -27,7 +27,6 @@
 @media print,
 (min-width: 768px) {
   .footer-common .central-bg {
-    padding: .78rem 0 0.3rem;
     background: url(../resources/images/common/footer_bg.jpg) center center / cover no-repeat;
   }
 
@@ -727,12 +726,12 @@
     gap: .1rem;
   }
 
-  .button-chat:hover .button-wrapper,
-  .button-360:hover .button-wrapper,
-  .button-phone:hover .button-wrapper,
-  .button-cta:hover .button-wrapper {
-    transform: scale(1.1);
-  }
+  // .button-chat:hover .button-wrapper,
+  // .button-360:hover .button-wrapper,
+  // .button-phone:hover .button-wrapper,
+  // .button-cta:hover .button-wrapper {
+  //   transform: scale(1.1);
+  // }
 
   @include desktop {
     right: 0.2rem;

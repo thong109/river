@@ -21,7 +21,7 @@ header.header-common
         a.header-phone(href="#")
           span.header-icon.is-phone
           span 19002663
-        a.header-cta(href="#")
+        span.header-cta.js-open-popup
           span.header-icon.is-cta
           span tư vấn
     .header-common-navigation
@@ -68,3 +68,37 @@ header.header-common
               a.item-wrapper.trans(href="#" target="_blank" rel="noopener")
                 img.object-common(src=imgCommonPC+"social_icon_03.svg" width="67" height="67" loading="lazy" alt="Tiktok")
       .overlay-menu
+
+  //- Popup
+  #popup-consult.popup-overlay
+    .popup-wrapper
+      span.popup-close
+        svg(viewBox="0 0 40 40", width="40", height="40")
+          path(fill="#fff", d="m39.7 2c0.4-0.5 0.4-1.2 0-1.6-0.5-0.4-1.2-0.4-1.6 0l-11.4 11.6c-3.7 3.7-9.7 3.7-13.4 0l-11.4-11.6c-0.4-0.4-1.1-0.4-1.6 0-0.4 0.4-0.4 1.1 0 1.6l11.4 11.5c3.7 3.8 3.7 9.8 0 13.6l-10.9 11.1c-0.5 0.4-0.5 1.1 0 1.5 0.4 0.5 1.1 0.5 1.5 0l11-11.1c3.7-3.7 9.7-3.7 13.4 0l11 11.1c0.4 0.5 1.1 0.5 1.5 0 0.5-0.4 0.5-1.1 0-1.5l-10.9-11.1c-3.7-3.8-3.7-9.8 0-13.6z")
+      .popup-body
+        .popup-image
+          picture
+            source(
+              media="(max-width: 767.98px)"
+              srcset=imgCommonPC+"header_bg_sp.jpg"
+            )
+            source(
+              media="(min-width: 768px)"
+              srcset=imgCommonPC+"header_bg.jpg"
+            )
+            img(src=imgCommonPC+"header_bg.jpg" width="1600" height="700" loading="eager" alt="Chất sống tuyệt đỉnh bên sông")
+        .popup-content
+          h2.popup-title ĐĂNG KÝ TƯ VẤN
+          form.contact-form(action="" method="post")
+            .form-group
+              .group-input
+                input.input-common(type="text" name="your-name" placeholder="Họ tên *" required)
+              .group-input
+                input.input-common(type="tel" name="your-phone" placeholder="Điện thoại *" required)
+            .form-group
+              input.input-common(type="email" name="your-email" placeholder="EMAIL")
+            .form-group
+              textarea.textarea-common(name="your-message" placeholder="LỜI NHẮN")
+            .form-controller
+              button.button-contact(type="submit")
+                span GỬI ĐĂNG KÝ

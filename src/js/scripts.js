@@ -777,6 +777,56 @@
     };
   };
 
+  const initPopup = () => {
+    const popupEl = getPopupElements("popup-consult");
+    const $header = $("header.header-common");
+
+    if (!popupEl || !$header) return;
+
+    const {
+      popup,
+      closeBtn
+    } = popupEl;
+    const openTriggers = document.querySelectorAll(".js-open-popup");
+
+    const open = () => {
+      $header.removeClass("is-hide");
+      document.body.style.overflow = 'hidden';
+      // WinScroll.stop();
+      freezeWindow(true);
+      window.__APP_STATE__?.observer?.disable();
+      setTimeout(() => {
+        popup.classList.add("is-open");
+      }, 300);
+    };
+
+    const close = () => {
+      popup.classList.remove("is-open");
+      document.body.style.overflow = '';
+      freezeWindow(false);
+      if (window.__APP_STATE__?.sliderState?.active) {
+        window.__APP_STATE__?.observer?.enable();
+      }
+    };
+
+    openTriggers.forEach((trigger) => {
+      trigger.addEventListener("click", (e) => {
+        e.preventDefault();
+        open();
+      });
+    });
+
+    closeBtn?.addEventListener("click", close);
+
+    popup.addEventListener("click", (e) => {
+      if (e.target === popup) close();
+    });
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && popup.classList.contains("is-open")) close();
+    });
+  };
+
   const initMobileAnimations = () => {
     if (isDesktop()) return;
 
@@ -1621,13 +1671,13 @@
         loop: true,
         speed: 1000,
         parallax: true,
-        autoplay: {
-          delay: 5000,
-          disableOnInteraction: false,
-        },
+        // autoplay: {
+        //   delay: 5000,
+        //   disableOnInteraction: false,
+        // },
         grabCursor: true,
         pagination: {
-          el: slider.parentElement.querySelector('.swiper-pagination'),
+          el: slider.querySelector('.swiper-pagination'),
           type: 'fraction',
 
           formatFractionCurrent(number) {
@@ -1647,29 +1697,30 @@
           },
         },
         navigation: {
-          nextEl: slider.parentElement.querySelector('.button-next'),
-          prevEl: slider.parentElement.querySelector('.button-prev'),
+          nextEl: '.js-utilities-slider .button-next',
+          prevEl: '.js-utilities-slider .button-prev',
         },
         on: {
           init: function () {
-            const swiper = this;
-
-            swiper.slides.forEach((slide) => {
-              $(slide).find(".slide-img").attr({
+            let swiper = this;
+            for (let i = 0; i < swiper.slides.length; i++) {
+              $(".js-utilities-slider", $(swiper.slides[i])).attr({
                 "data-swiper-parallax": 0.75 * swiper.width,
                 "data-swiper-parallax-opacity": 1
               });
 
-              $(slide).find(".utilities-detail").attr({
-                "data-swiper-parallax": 0.65 * swiper.width,
+              $(".js-utilities-slider .utilities-detail", $(swiper.slides[i])).attr({
+                "data-swiper-parallax": 0.65 * swiper.width
               });
-
-              $(slide).find(".block-top-utilities").attr({
-                "data-swiper-parallax": 0.5 * swiper.width,
+              $(".js-utilities-slider .block-top-utilities", $(swiper.slides[i])).attr({
+                "data-swiper-parallax": 0.5 * swiper.width
               });
-            });
+            }
           },
-        }
+          resize: function () {
+            this.update();
+          }
+        },
       });
     });
   };
@@ -1806,4 +1857,5 @@
   utilitiesSlider();
   buttonTop();
   commonSliderMobile();
+  initPopup();
 })();
